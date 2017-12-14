@@ -1,0 +1,43 @@
+From 73671feb9a49cf3f13323a1a7a8f584a6865da6f Mon Sep 17 00:00:00 2001
+From: Zhenyu Liang <zhenyu.liang@intel.com>
+Date: Fri, 15 Dec 2017 04:03:26 +0800
+Subject: [PATCH] Fix host-only build failure
+
+Change-Id: Iaf12ea3674fa46c86a993df366dbbb39870fb7b2
+Tracked-On:
+---
+ platform/tablet/product/yunhal/xmake.product | 4 +++-
+ prebuilts/devtools/mk-image.sh               | 2 +-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/platform/tablet/product/yunhal/xmake.product b/platform/tablet/product/yunhal/xmake.product
+index 0aa243e..6776e1f 100644
+--- a/platform/tablet/product/yunhal/xmake.product
++++ b/platform/tablet/product/yunhal/xmake.product
+@@ -325,7 +325,9 @@
+     wpa_supplicant \
+     libnl1 \
+     e2fsprogs \
+-    ipsec-tools
++    ipsec-tools \
++    woogeen_bin \
++    woogeen_jsni
+ 
+ # note this tool must have Microsoft authorized license
+ # ntfs-3g link: http://www.tuxera.com/community/open-source-ntfs-3g/
+diff --git a/prebuilts/devtools/mk-image.sh b/prebuilts/devtools/mk-image.sh
+index 038def0..ccedd23 100755
+--- a/prebuilts/devtools/mk-image.sh
++++ b/prebuilts/devtools/mk-image.sh
+@@ -706,7 +706,7 @@ make_intel_yunhal_image()
+     ln -s /mnt/data/yunos/share ${XMAKE_ROOTFS_DIR}/data
+     cp -rf ${XMAKE_TOOLS_DIR}/resolv.conf ${XMAKE_ROOTFS_DIR}/etc/
+ 
+-    if [ x"${XMAKE_BUILD_TYPE}" = x"eng" ] ; then
++    if [ x"${XMAKE_BUILD_TYPE}" = x"eng" -a "$XMAKE_ENABLE_CNTR_CVG" = "true" ] ; then
+         # make android image content for test
+         cp ${TOP}/prebuilts/yunos3.0/system/ramdisk.img $image_dir/ramdisk.img
+         RET=$?
+-- 
+1.9.1
+
