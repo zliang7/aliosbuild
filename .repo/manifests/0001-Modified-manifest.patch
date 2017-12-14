@@ -1,20 +1,20 @@
-From 937b1b21d7bb37bc813a07b9190442e5f77666fc Mon Sep 17 00:00:00 2001
+From 1c6a57128886abe84461199db43e7336bc6c8550 Mon Sep 17 00:00:00 2001
 From: wangtao <tao.w.wang@intel.com>
-Date: Mon, 23 Oct 2017 12:14:22 +0800
+Date: Tue, 28 Nov 2017 10:16:24 +0800
 Subject: [PATCH] Modified manifest
 
 ---
- default.xml      | 649 ++++++++++++++++++++++++++++---------------------------
+ default.xml      | 645 +++++++++++++++++++++++++++---------------------------
  dev_host_x86     |   1 +
- manifest_tag.xml | 649 ++++++++++++++++++++++++++++---------------------------
- 3 files changed, 651 insertions(+), 648 deletions(-)
+ manifest_tag.xml | 647 ++++++++++++++++++++++++++++---------------------------
+ 3 files changed, 647 insertions(+), 646 deletions(-)
  create mode 120000 dev_host_x86
 
 diff --git a/default.xml b/default.xml
-index 4e8bbf6..a2fb928 100644
+index b92176d..20760a8 100644
 --- a/default.xml
 +++ b/default.xml
-@@ -1,332 +1,333 @@
+@@ -1,331 +1,330 @@
  <?xml version="1.0" encoding="utf-8"?>
  <manifest>
 -  <remote fetch="../.." name="extyunos" review="http://gerrit-custom2.yunos.com:8080"/>
@@ -75,6 +75,7 @@ index 4e8bbf6..a2fb928 100644
 -  <project name="code/os/framework/libs/user" path="framework/libs/user"/>
 -  <project name="code/os/framework/libs/webengine/chromium" path="framework/libs/webengine/chromium"/>
 -  <project name="code/os/framework/libs/webengine/domono" path="framework/libs/webengine/domono"/>
+-  <project name="code/os/framework/nativeservice/intelligenced" path="framework/nativeservice/intelligenced"/>
 -  <project name="code/os/framework/nativeservice/loggerd" path="framework/nativeservice/loggerd"/>
 -  <project name="code/os/framework/npm/audio" path="framework/npm/audio"/>
 -  <project name="code/os/framework/npm/battery" path="framework/npm/battery"/>
@@ -136,7 +137,6 @@ index 4e8bbf6..a2fb928 100644
 -  <project name="code/os/framework/nativeservice/providermgrd" path="framework/nativeservice/providermgrd"/>
 -  <project name="code/os/framework/nativeservice/seed" path="framework/nativeservice/seed"/>
 -  <project name="code/os/framework/nativeservice/storagemgrd" path="framework/nativeservice/storagemgrd"/>
--  <project name="code/os/framework/pageservice/systemsrv" path="framework/pageservice/systemsrv"/>
 -  <project name="code/os/framework/nativeservice/timed" path="framework/nativeservice/timed"/>
 -  <project name="code/os/framework/nativeservice/ttsd" path="framework/nativeservice/ttsd"/>
 -  <project name="code/os/framework/nativeservice/vibratord" path="framework/nativeservice/vibratord"/>
@@ -148,6 +148,7 @@ index 4e8bbf6..a2fb928 100644
 -  <project name="code/os/hal/hardware/libbsd" path="hal/hardware/libbsd"/>
 -  <project name="code/os/hal/hardware/libhybris" path="hal/hardware/libhybris"/>
 -  <project name="code/os/prebuilts/images" path="prebuilts/images"/>
+-  <project name="code/os/prebuilts/binary_config" path="prebuilts/binary_config"/>
 -  <project name="code/os/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnueabi-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnueabi-4.9-glibc-2.20"/>
 -  <project name="code/os/prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-4.9-glibc-2.20"/>
 -  <project name="code/os/prebuilts/gcc/linux-x86/x86/i686-linux-gnu-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/x86/i686-linux-gnu-4.9-glibc-2.20"/>
@@ -277,7 +278,6 @@ index 4e8bbf6..a2fb928 100644
 +  <project name="a/y_os_a/framework/services/providermanagerservice" path="framework/nativeservice/providermgrd"/>
 +  <project name="a/y_os_a/framework/services/seed" path="framework/nativeservice/seed"/>
 +  <project name="a/y_os_a/framework/services/storagemanagerd" path="framework/nativeservice/storagemgrd"/>
-+  <project name="a/y_os_a/framework/services/systemservice" path="framework/pageservice/systemsrv"/>
 +  <project name="a/y_os_a/framework/services/timeservice" path="framework/nativeservice/timed"/>
 +  <project name="a/y_os_a/framework/services/tts" path="framework/nativeservice/ttsd"/>
 +  <project name="a/y_os_a/framework/services/vibratord" path="framework/nativeservice/vibratord"/>
@@ -289,6 +289,7 @@ index 4e8bbf6..a2fb928 100644
 +  <project name="a/y_os_a/hal/hardware/libbsd" path="hal/hardware/libbsd"/>
 +  <project name="a/y_os_a/hal/hardware/libhybris" path="hal/hardware/libhybris"/>
 +  <project name="a/y_os_a/mer/images" path="prebuilts/images"/>
++  <project name="a/y_os_a/prebuilts/binary_config" path="prebuilts/binary_config"/>
 +  <project name="a/y_os_a/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnueabi-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnueabi-4.9-glibc-2.20"/>
 +  <project name="a/y_os_a/prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-4.9-glibc-2.20"/>
 +  <project name="a/y_os_a/prebuilts/gcc/linux-x86/x86/i686-linux-gnu-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/x86/i686-linux-gnu-4.9-glibc-2.20"/>
@@ -305,9 +306,6 @@ index 4e8bbf6..a2fb928 100644
    </project>
 -  <project name="code/os/prebuilts/tools/intel" path="prebuilts/tools/intel"/>
 -  <project name="code/os/prebuilts/yunos3.0" path="prebuilts/yunos3.0"/>
--  <project name="code/os/prebuilts/yunospick_binary_debug" path="prebuilts/yunospick_binary_debug"/>
--  <project name="code/os/prebuilts/yunospick_binary_eng" path="prebuilts/yunospick_binary_eng"/>
--  <project name="code/os/prebuilts/yunospick_binary_user" path="prebuilts/yunospick_binary_user"/>
 -  <project name="code/os/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec"/>
 -  <project name="code/os/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool"/>
 -  <project name="code/os/framework/pageservice/mediaprvsrv" path="framework/pageservice/mediaprvsrv"/>
@@ -474,6 +472,7 @@ index 4e8bbf6..a2fb928 100644
 -  <project name="code/os/vendor/intel/sensor/cht/ish-sensors" path="vendor/intel/sensor/cht/ish-sensors"/>
 -  <project name="code/os/vendor/intel/sensor/cht/libsensorhub" path="vendor/intel/sensor/cht/libsensorhub"/>
 -  <project name="code/os/vm/codecache" path="vm/codecache"/>
+-  <project name="code/os/vm/jsni" path="vm/jsni"/>
 -  <project name="code/os/vm/jsnihelper" path="vm/jsnihelper"/>
 -  <project name="code/os/vm/node" path="vm/node"/>
 -  <project name="code/os/vm/v8" path="vm/v8"/>
@@ -489,9 +488,6 @@ index 4e8bbf6..a2fb928 100644
 -  <project name="code/os/third_party/json-c" path="third_party/json-c"/>
 +  <project name="a/y_os_a/prebuilts/tools/intel" path="prebuilts/tools/intel"/>
 +  <project name="a/y_os_a/prebuilts/yunos3.0" path="prebuilts/yunos3.0"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_binary_debug" path="prebuilts/yunospick_binary_debug"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_binary_eng" path="prebuilts/yunospick_binary_eng"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_binary_user" path="prebuilts/yunospick_binary_user"/>
 +  <project name="a/y_os_a/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec"/>
 +  <project name="a/y_os_a/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool"/>
 +  <project name="a/y_os_a/providers/mediaprovider" path="framework/pageservice/mediaprvsrv"/>
@@ -612,7 +608,6 @@ index 4e8bbf6..a2fb928 100644
 +  <project name="a/y_os_a/third_party/pppd" path="third_party/pppd"/>
 +  <project name="a/y_os_a/third_party/presentproto" path="third_party/presentproto"/>
 +  <project name="a/y_os_a/third_party/procps-ng" path="third_party/procps-ng"/>
-+  <project name="a/y_os_a/third_party/protobuf" path="third_party/protobuf"/>
 +  <project name="a/y_os_a/third_party/pulseaudio" path="third_party/pulseaudio"/>
 +  <project name="a/y_os_a/third_party/python" path="third_party/python"/>
 +  <project name="a/y_os_a/third_party/python-gobject" path="third_party/python-gobject"/>
@@ -658,6 +653,7 @@ index 4e8bbf6..a2fb928 100644
 +  <project name="a/y_os_a/vendor/intel/sensor/cht/ish-sensors" path="vendor/intel/sensor/cht/ish-sensors"/>
 +  <project name="a/y_os_a/vendor/intel/sensor/cht/libsensorhub" path="vendor/intel/sensor/cht/libsensorhub"/>
 +  <project name="a/y_os_a/vm/codecache" path="vm/codecache"/>
++  <project name="a/y_os_a/vm/jsni" path="vm/jsni"/>
 +  <project name="a/y_os_a/vm/jsnihelper" path="vm/jsnihelper"/>
 +  <project name="a/y_os_a/vm/node" path="vm/node"/>
 +  <project name="a/y_os_a/vm/v8" path="vm/v8"/>
@@ -681,10 +677,10 @@ index 0000000..41e6f50
 +default.xml
 \ No newline at end of file
 diff --git a/manifest_tag.xml b/manifest_tag.xml
-index 3452bd3..aab86a1 100644
+index 3316060..25c8e9d 100644
 --- a/manifest_tag.xml
 +++ b/manifest_tag.xml
-@@ -1,332 +1,333 @@
+@@ -1,331 +1,332 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <manifest>
 -  <remote fetch="../.." name="extyunos" review="http://gerrit-custom2.yunos.com:8080"/>
@@ -715,36 +711,37 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/apps/systemui" path="apps/systemui" revision="6ecbc9475dc49bd1f90a7cdc0388da85ef3250c9" upstream="dev_host_x86"/>
 -  <project name="code/os/apps/tablet/bootwizard" path="apps/tablet/bootwizard" revision="621314849d3f4c4a392dd62f32769bc016cf80e5" upstream="dev_host_x86"/>
 -  <project name="code/os/apps/tablet/cardshell" path="apps/tablet/cardshell" revision="4316976723af96e8b464da0157c0e9bf149a46d5" upstream="dev_host_x86"/>
--  <project name="code/os/apps/tablet/ime" path="apps/tablet/ime" revision="59bc4ac5f99dba24925e40c1e74a55436f3ed916" upstream="dev_host_x86"/>
+-  <project name="code/os/apps/tablet/ime" path="apps/tablet/ime" revision="77bd51f79028d03decfa55c819b11f29bdf3f935" upstream="dev_host_x86"/>
 -  <project name="code/os/apps/tablet/setting" path="apps/tablet/setting" revision="943cea271e428f40a62f84ba866baa4ea94a0e62" upstream="dev_host_x86"/>
 -  <project name="code/os/apps/tablet/videochatdemo" path="apps/tablet/videochatdemo" revision="de4b5629a46f0d0209b5857da503c665eca6ebf4" upstream="dev_host_x86"/>
 -  <project name="code/os/apps/tablet/webrtc" path="apps/tablet/webrtc" revision="ede93853c57ae7291ea970b9a875d8643170f5a6" upstream="dev_host_x86"/>
 -  <project name="code/os/apps/taskmanagement" path="apps/taskmanagement" revision="d347f78a1d6ee1f7067eb822554a08bb9b129564" upstream="dev_host_x86"/>
 -  <project name="code/os/apps/weblauncher" path="apps/weblauncher" revision="32d2a8d57ca7b0267a400ed030585f777231177c" upstream="dev_host_x86"/>
 -  <project name="code/os/container/android-core" path="container/android-core" revision="70bb0b616fa24819e266a2157b98d1b5665beeed" upstream="dev_host_x86"/>
--  <project name="code/os/third_party/corefoundation" path="third_party/corefoundation" revision="0bdeb4d22421c3899cde0572c3175ad453dbab0f" upstream="dev_host_x86"/>
+-  <project name="code/os/third_party/corefoundation" path="third_party/corefoundation" revision="8e102d5aaac0ef2434c35eedab06542bde86fb04" upstream="dev_host_x86"/>
 -  <project name="code/os/device/hp/peacock/firmware" path="device/hp/peacock/firmware" revision="84f5bea51ce795ab2fc9bae519e2e0bf343299b9" upstream="dev_host_x86"/>
 -  <project name="code/os/device/hp/peacock/led" path="device/hp/peacock/led" revision="bfb24761eff51c00d6d945bb729fcff3160d6ec6" upstream="dev_host_x86"/>
--  <project name="code/os/framework/libs/base" path="framework/libs/base" revision="d6ce6e6f0f3e662160721291ec9fd72dae3d4a57" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/libs/base" path="framework/libs/base" revision="fa487a560b367b3d9f4483f570156e31f00930ba" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/battery" path="framework/libs/battery" revision="85e8921db9764420bddcd0d43d98b7de87d2b0eb" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/cloudcode" path="framework/libs/cloudcode" revision="61826ca3508a898902514fe48bba6ffd30d56043" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/data" path="framework/libs/data" revision="a999ba62d6f1e8ea1851263fac09c427c32b9992" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/gcontext" path="framework/libs/gcontext" revision="eec1d58a32399b55ef950afe7968326d59b405c0" upstream="dev_host_x86"/>
--  <project name="code/os/framework/libs/graphics" path="framework/libs/graphics" revision="9ba096b0aa1883a97884f5c7bc4d7ff5e512cf6d" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/libs/graphics" path="framework/libs/graphics" revision="1492f82e5dc102f3cb72d2349a3bd7fcfce91e49" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/gui/gesture" path="framework/libs/gui/gesture" revision="7ad5e4197d8a15474d7e435bce9f92c51b22e71c" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/gui/surface" path="framework/libs/gui/surface" revision="dc7e5645985dd6d33808963562ce6b12abffdebf" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/gui/wayland" path="framework/libs/gui/wayland" revision="701e3af5da1921d84d44b90b4ef8e81d85a390e7" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/gui/window" path="framework/libs/gui/window" revision="f48fc1d4fff13826af5aaac9f4588cd58ec08625" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/gui/wpc" path="framework/libs/gui/wpc" revision="41386070fec12861c1438df0683b8c6834b87d4f" upstream="dev_host_x86"/>
--  <project name="code/os/framework/libs/network" path="framework/libs/network" revision="2adfbda22b1e07b55709ce4fd17f29c4915aed5e" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/libs/network" path="framework/libs/network" revision="0eb09a4dc85a0d008f14cf458f42a99d016d7ed7" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/page" path="framework/libs/page" revision="3ef3bfe4c4e77a994f5e08d0103acfc111207666" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/properties" path="framework/libs/properties" revision="bd6724383ee874256eaa8a9d5af1692dba6c75cd" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/settings" path="framework/libs/settings" revision="877146c52c9b4bce89dd0d11ecae417ebf6034f7" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/statusbar" path="framework/libs/statusbar" revision="3c8d3fd335ffd025324165707d51c3d6a7d608e1" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/telephony" path="framework/libs/telephony" revision="5d84d0305fd95e95adf99bd7a17f97b3fd38e5c9" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/user" path="framework/libs/user" revision="3ab77aa0923658d32545c1254a79fdd216f7145e" upstream="dev_host_x86"/>
--  <project name="code/os/framework/libs/webengine/chromium" path="framework/libs/webengine/chromium" revision="306a9fc14b51ae3109b9693860e750594a4ebc8d" upstream="dev_host_x86"/>
--  <project name="code/os/framework/libs/webengine/domono" path="framework/libs/webengine/domono" revision="d02040edd537ffd356f6b227aa6d3e1355e7da89" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/libs/webengine/chromium" path="framework/libs/webengine/chromium" revision="80b0e7c60640117dd615d938cb003f7a1e358c20" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/libs/webengine/domono" path="framework/libs/webengine/domono" revision="002a100141881b5f6f111fd71ee5eba4938e6235" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/nativeservice/intelligenced" path="framework/nativeservice/intelligenced" revision="e165a3d56e12f1e8baf916820756383ccf73fefa" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/nativeservice/loggerd" path="framework/nativeservice/loggerd" revision="cc41344141bfa1f14caa540304d59cdf8dce4085" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/npm/audio" path="framework/npm/audio" revision="9c35a85398f2950b2d4570bba5774f5cb479b545" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/npm/battery" path="framework/npm/battery" revision="88d3cf1eb479ce7f30f9ea5547798e57d8f0c9b2" upstream="dev_host_x86"/>
@@ -766,7 +763,7 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/framework/npm/filesystem" path="framework/npm/filesystem" revision="d601130180345c56641303a9da2c53776b457c80" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/npm/handwriting" path="framework/npm/handwriting" revision="362ba01837c500a494b2e19b6752f7cb2a0ad635" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/npm/localization" path="framework/npm/localization" revision="d8a4a20c61d83258b5ea0e45c9b2ae75225ac0f1" upstream="dev_host_x86"/>
--  <project name="code/os/framework/npm/multimedia" path="framework/npm/multimedia" revision="c21370b7d89cd663821314e72fac8f33dbdea514" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/npm/multimedia" path="framework/npm/multimedia" revision="53eb2a2f7247db7c91deac349d765996a27649b5" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/npm/netmonitor" path="framework/npm/netmonitor" revision="6b6b2b35c842445bdcb69f47a4f0d88ebad7961d" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/npm/pageapi" path="framework/npm/pageapi" revision="d2e2c8c12cded7eef07542d4eb0ec3ca4b442599" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/npm/permission" path="framework/npm/permission" revision="e0d55ebefe34fdac805116c0aef2c0fa58255792" upstream="dev_host_x86"/>
@@ -800,17 +797,16 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/framework/nativeservice/fingerprintd" path="framework/nativeservice/fingerprintd" revision="f6e379d1cfd6f94ea99e5b0b60d9ddd943b6e141" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/nativeservice/imed" path="framework/nativeservice/imed" revision="9f5c7a0019d0c516366f7f843f39a046626471a8" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/libs/location/gps-provider" path="framework/libs/location/gps-provider" revision="51c9344d19f7728b244325a85643623e736fc4d9" upstream="dev_host_x86"/>
--  <project name="code/os/framework/nativeservice/multimediad" path="framework/nativeservice/multimediad" revision="755b859e2e0169ea42e05ef8421b32f6b6eb6a37" upstream="dev_host_x86"/>
--  <project name="code/os/framework/nativeservice/pagemgrd" path="framework/nativeservice/pagemgrd" revision="e827313d3fd614d34f135f43cdbc43b3b8737ee0" upstream="dev_host_x86"/>
--  <project name="code/os/framework/nativeservice/powermgrd" path="framework/nativeservice/powermgrd" revision="d22b62e21813d3edaf5c2af6ac2ace18d4cddef0" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/nativeservice/multimediad" path="framework/nativeservice/multimediad" revision="615716339321f77f2be84e953615496ae53c523a" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/nativeservice/pagemgrd" path="framework/nativeservice/pagemgrd" revision="5720f15b1d4381608a397a8287cb99a45d17c3a6" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/nativeservice/powermgrd" path="framework/nativeservice/powermgrd" revision="22fc745eb2f6081c42e47f6ea07a6fae8ec87a6d" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/nativeservice/providermgrd" path="framework/nativeservice/providermgrd" revision="630af28065954abd1a0dab8206eb736be33c0d94" upstream="dev_host_x86"/>
--  <project name="code/os/framework/nativeservice/seed" path="framework/nativeservice/seed" revision="6c275ee6118b2d81d9daecb41cb7a6f6d6b1b65f" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/nativeservice/seed" path="framework/nativeservice/seed" revision="caf06e3c414ce4a20da802b366483e6106ea8bb4" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/nativeservice/storagemgrd" path="framework/nativeservice/storagemgrd" revision="4dfc79f8e588fff1e2611323dabd1b0e24ad8e30" upstream="dev_host_x86"/>
--  <project name="code/os/framework/pageservice/systemsrv" path="framework/pageservice/systemsrv" revision="a13716913942ce75e29858e7d0902531bd13c8bc" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/nativeservice/timed" path="framework/nativeservice/timed" revision="bfd87905e2c8b44521187abb7bf3fbf1e262b888" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/nativeservice/ttsd" path="framework/nativeservice/ttsd" revision="64c33236f3f32de80dbe2fbadd7a1b73755e30e9" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/nativeservice/vibratord" path="framework/nativeservice/vibratord" revision="b8147c7e8feeaf91f0c2ac8872070b1bb0f0681b" upstream="dev_host_x86"/>
--  <project name="code/os/framework/nativeservice/utopiad" path="framework/nativeservice/utopiad" revision="85760dc814e8719df8f39b04927d4d4e0327bd5c" upstream="dev_host_x86"/>
+-  <project name="code/os/framework/nativeservice/utopiad" path="framework/nativeservice/utopiad" revision="4285968b7028b3d5c7dcf2b58c988681e4942a3d" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/nativeservice/yril" path="framework/nativeservice/yril" revision="0d1d226627abddb6e09203064aa6d8fc54e85552" upstream="dev_host_x86"/>
 -  <project name="code/os/sdk/tools/procmem" path="sdk/tools/procmem" revision="90bb1f715da8f316cf660c518940a94788322f6b" upstream="dev_host_x86"/>
 -  <project name="code/os/sdk/tools/procrank" path="sdk/tools/procrank" revision="3e388ebcaa646a941ef31a4f9e70bfb9fd039af3" upstream="dev_host_x86"/>
@@ -818,6 +814,7 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/hal/hardware/libbsd" path="hal/hardware/libbsd" revision="48419391904d83757918415dbc96569e3b8657ad" upstream="dev_host_x86"/>
 -  <project name="code/os/hal/hardware/libhybris" path="hal/hardware/libhybris" revision="cf133c595a0a95e8ad71e4815225fe0009be81ea" upstream="dev_host_x86"/>
 -  <project name="code/os/prebuilts/images" path="prebuilts/images" revision="a772873f28f4d2daab55dea0160775f7c39ac138" upstream="dev_host_x86"/>
+-  <project name="code/os/prebuilts/binary_config" path="prebuilts/binary_config" revision="5f64fe50c2fa46d7ff91bcf287457e27d5923998" upstream="dev_host_x86"/>
 -  <project name="code/os/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnueabi-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnueabi-4.9-glibc-2.20" revision="dfb82b3b6d80c2f3631885308634dbe338ff2bcc" upstream="dev_host_x86"/>
 -  <project name="code/os/prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-4.9-glibc-2.20" revision="5b6d8958ccb78125086581f3d2b616f75c410900" upstream="dev_host_x86"/>
 -  <project name="code/os/prebuilts/gcc/linux-x86/x86/i686-linux-gnu-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/x86/i686-linux-gnu-4.9-glibc-2.20" revision="07f352c24eb2e6024a86018ef9f38d3baa10c7c7" upstream="dev_host_x86"/>
@@ -856,36 +853,37 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/apps/systemui" path="apps/systemui" revision="6ecbc9475dc49bd1f90a7cdc0388da85ef3250c9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/tablet/bootwizard" path="apps/tablet/bootwizard" revision="621314849d3f4c4a392dd62f32769bc016cf80e5" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/tablet/cardshell" path="apps/tablet/cardshell" revision="4316976723af96e8b464da0157c0e9bf149a46d5" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/apps/tablet/ime" path="apps/tablet/ime" revision="59bc4ac5f99dba24925e40c1e74a55436f3ed916" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/apps/tablet/ime" path="apps/tablet/ime" revision="77bd51f79028d03decfa55c819b11f29bdf3f935" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/tablet/setting" path="apps/tablet/setting" revision="943cea271e428f40a62f84ba866baa4ea94a0e62" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/tablet/videochatdemo" path="apps/tablet/videochatdemo" revision="de4b5629a46f0d0209b5857da503c665eca6ebf4" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/tablet/webrtc" path="apps/tablet/webrtc" revision="ede93853c57ae7291ea970b9a875d8643170f5a6" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/taskmanagement" path="apps/taskmanagement" revision="d347f78a1d6ee1f7067eb822554a08bb9b129564" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/weblauncher" path="apps/weblauncher" revision="32d2a8d57ca7b0267a400ed030585f777231177c" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/container/android-core" path="container/android-core" revision="70bb0b616fa24819e266a2157b98d1b5665beeed" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/core/foundation" path="third_party/corefoundation" revision="0bdeb4d22421c3899cde0572c3175ad453dbab0f" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/core/foundation" path="third_party/corefoundation" revision="8e102d5aaac0ef2434c35eedab06542bde86fb04" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/device/hp/peacock/firmware" path="device/hp/peacock/firmware" revision="84f5bea51ce795ab2fc9bae519e2e0bf343299b9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/device/hp/peacock/led" path="device/hp/peacock/led" revision="bfb24761eff51c00d6d945bb729fcff3160d6ec6" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/base" path="framework/libs/base" revision="d6ce6e6f0f3e662160721291ec9fd72dae3d4a57" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/base" path="framework/libs/base" revision="fa487a560b367b3d9f4483f570156e31f00930ba" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/battery" path="framework/libs/battery" revision="85e8921db9764420bddcd0d43d98b7de87d2b0eb" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/cloudcode" path="framework/libs/cloudcode" revision="61826ca3508a898902514fe48bba6ffd30d56043" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/data" path="framework/libs/data" revision="a999ba62d6f1e8ea1851263fac09c427c32b9992" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/gcontext" path="framework/libs/gcontext" revision="eec1d58a32399b55ef950afe7968326d59b405c0" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/graphics" path="framework/libs/graphics" revision="9ba096b0aa1883a97884f5c7bc4d7ff5e512cf6d" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/graphics" path="framework/libs/graphics" revision="1492f82e5dc102f3cb72d2349a3bd7fcfce91e49" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/gui/gesture" path="framework/libs/gui/gesture" revision="7ad5e4197d8a15474d7e435bce9f92c51b22e71c" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/gui/surface" path="framework/libs/gui/surface" revision="dc7e5645985dd6d33808963562ce6b12abffdebf" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/gui/wayland" path="framework/libs/gui/wayland" revision="701e3af5da1921d84d44b90b4ef8e81d85a390e7" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/gui/window" path="framework/libs/gui/window" revision="f48fc1d4fff13826af5aaac9f4588cd58ec08625" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/gui/wpc" path="framework/libs/gui/wpc" revision="41386070fec12861c1438df0683b8c6834b87d4f" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/network" path="framework/libs/network" revision="2adfbda22b1e07b55709ce4fd17f29c4915aed5e" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/network" path="framework/libs/network" revision="0eb09a4dc85a0d008f14cf458f42a99d016d7ed7" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/page" path="framework/libs/page" revision="3ef3bfe4c4e77a994f5e08d0103acfc111207666" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/properties" path="framework/libs/properties" revision="bd6724383ee874256eaa8a9d5af1692dba6c75cd" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/settings" path="framework/libs/settings" revision="877146c52c9b4bce89dd0d11ecae417ebf6034f7" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/statusbar" path="framework/libs/statusbar" revision="3c8d3fd335ffd025324165707d51c3d6a7d608e1" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/telephony" path="framework/libs/telephony" revision="5d84d0305fd95e95adf99bd7a17f97b3fd38e5c9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/user" path="framework/libs/user" revision="3ab77aa0923658d32545c1254a79fdd216f7145e" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/webengine/chromium" path="framework/libs/webengine/chromium" revision="306a9fc14b51ae3109b9693860e750594a4ebc8d" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/webengine/domono" path="framework/libs/webengine/domono" revision="d02040edd537ffd356f6b227aa6d3e1355e7da89" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/webengine/chromium" path="framework/libs/webengine/chromium" revision="80b0e7c60640117dd615d938cb003f7a1e358c20" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/webengine/domono" path="framework/libs/webengine/domono" revision="002a100141881b5f6f111fd71ee5eba4938e6235" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/nativeservice/intelligenced" path="framework/nativeservice/intelligenced" revision="e165a3d56e12f1e8baf916820756383ccf73fefa" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/nativeservice/loggerd" path="framework/nativeservice/loggerd" revision="cc41344141bfa1f14caa540304d59cdf8dce4085" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/audio" path="framework/npm/audio" revision="9c35a85398f2950b2d4570bba5774f5cb479b545" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/battery" path="framework/npm/battery" revision="88d3cf1eb479ce7f30f9ea5547798e57d8f0c9b2" upstream="y_os_a/dev_host_x86"/>
@@ -907,7 +905,7 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/framework/npm/filesystem" path="framework/npm/filesystem" revision="d601130180345c56641303a9da2c53776b457c80" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/handwriting" path="framework/npm/handwriting" revision="362ba01837c500a494b2e19b6752f7cb2a0ad635" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/localization" path="framework/npm/localization" revision="d8a4a20c61d83258b5ea0e45c9b2ae75225ac0f1" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/npm/multimedia" path="framework/npm/multimedia" revision="c21370b7d89cd663821314e72fac8f33dbdea514" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/npm/multimedia" path="framework/npm/multimedia" revision="53eb2a2f7247db7c91deac349d765996a27649b5" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/net_monitor" path="framework/npm/netmonitor" revision="6b6b2b35c842445bdcb69f47a4f0d88ebad7961d" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/pageapi" path="framework/npm/pageapi" revision="d2e2c8c12cded7eef07542d4eb0ec3ca4b442599" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/permission" path="framework/npm/permission" revision="e0d55ebefe34fdac805116c0aef2c0fa58255792" upstream="y_os_a/dev_host_x86"/>
@@ -941,17 +939,16 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/framework/services/fingerprintd" path="framework/nativeservice/fingerprintd" revision="f6e379d1cfd6f94ea99e5b0b60d9ddd943b6e141" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/inputmethod" path="framework/nativeservice/imed" revision="9f5c7a0019d0c516366f7f843f39a046626471a8" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/location/gps-manager" path="framework/libs/location/gps-provider" revision="51c9344d19f7728b244325a85643623e736fc4d9" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/multimedia" path="framework/nativeservice/multimediad" revision="755b859e2e0169ea42e05ef8421b32f6b6eb6a37" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/pagemanagerd" path="framework/nativeservice/pagemgrd" revision="e827313d3fd614d34f135f43cdbc43b3b8737ee0" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/powermanagerd" path="framework/nativeservice/powermgrd" revision="d22b62e21813d3edaf5c2af6ac2ace18d4cddef0" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/multimedia" path="framework/nativeservice/multimediad" revision="615716339321f77f2be84e953615496ae53c523a" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/pagemanagerd" path="framework/nativeservice/pagemgrd" revision="5720f15b1d4381608a397a8287cb99a45d17c3a6" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/powermanagerd" path="framework/nativeservice/powermgrd" revision="22fc745eb2f6081c42e47f6ea07a6fae8ec87a6d" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/providermanagerservice" path="framework/nativeservice/providermgrd" revision="630af28065954abd1a0dab8206eb736be33c0d94" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/seed" path="framework/nativeservice/seed" revision="6c275ee6118b2d81d9daecb41cb7a6f6d6b1b65f" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/seed" path="framework/nativeservice/seed" revision="caf06e3c414ce4a20da802b366483e6106ea8bb4" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/storagemanagerd" path="framework/nativeservice/storagemgrd" revision="4dfc79f8e588fff1e2611323dabd1b0e24ad8e30" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/systemservice" path="framework/pageservice/systemsrv" revision="a13716913942ce75e29858e7d0902531bd13c8bc" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/timeservice" path="framework/nativeservice/timed" revision="bfd87905e2c8b44521187abb7bf3fbf1e262b888" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/tts" path="framework/nativeservice/ttsd" revision="64c33236f3f32de80dbe2fbadd7a1b73755e30e9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/vibratord" path="framework/nativeservice/vibratord" revision="b8147c7e8feeaf91f0c2ac8872070b1bb0f0681b" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/weston" path="framework/nativeservice/utopiad" revision="85760dc814e8719df8f39b04927d4d4e0327bd5c" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/weston" path="framework/nativeservice/utopiad" revision="4285968b7028b3d5c7dcf2b58c988681e4942a3d" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/yril" path="framework/nativeservice/yril" revision="0d1d226627abddb6e09203064aa6d8fc54e85552" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/tools/procmem" path="sdk/tools/procmem" revision="90bb1f715da8f316cf660c518940a94788322f6b" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/tools/procrank" path="sdk/tools/procrank" revision="3e388ebcaa646a941ef31a4f9e70bfb9fd039af3" upstream="y_os_a/dev_host_x86"/>
@@ -959,6 +956,7 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/hal/hardware/libbsd" path="hal/hardware/libbsd" revision="48419391904d83757918415dbc96569e3b8657ad" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/hal/hardware/libhybris" path="hal/hardware/libhybris" revision="cf133c595a0a95e8ad71e4815225fe0009be81ea" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/mer/images" path="prebuilts/images" revision="a772873f28f4d2daab55dea0160775f7c39ac138" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/prebuilts/binary_config" path="prebuilts/binary_config" revision="5f64fe50c2fa46d7ff91bcf287457e27d5923998" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnueabi-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnueabi-4.9-glibc-2.20" revision="dfb82b3b6d80c2f3631885308634dbe338ff2bcc" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-4.9-glibc-2.20" revision="5b6d8958ccb78125086581f3d2b616f75c410900" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/prebuilts/gcc/linux-x86/x86/i686-linux-gnu-4.9-glibc-2.20" path="prebuilts/gcc/linux-x86/x86/i686-linux-gnu-4.9-glibc-2.20" revision="07f352c24eb2e6024a86018ef9f38d3baa10c7c7" upstream="y_os_a/dev_host_x86"/>
@@ -975,13 +973,10 @@ index 3452bd3..aab86a1 100644
    </project>
 -  <project name="code/os/prebuilts/tools/intel" path="prebuilts/tools/intel" revision="9048c550307b5e222bd75f94eb363e863a49c8ab" upstream="dev_host_x86"/>
 -  <project name="code/os/prebuilts/yunos3.0" path="prebuilts/yunos3.0" revision="65df5fb6dca316608443b709a6e3fd30c620db4a" upstream="dev_host_x86"/>
--  <project name="code/os/prebuilts/yunospick_binary_debug" path="prebuilts/yunospick_binary_debug" revision="f013cea932ba4acf1f1d23c3f9935452f74f6a34" upstream="dev_host_x86"/>
--  <project name="code/os/prebuilts/yunospick_binary_eng" path="prebuilts/yunospick_binary_eng" revision="207128e02c8d1ec8c92663f57a25798d3479d948" upstream="dev_host_x86"/>
--  <project name="code/os/prebuilts/yunospick_binary_user" path="prebuilts/yunospick_binary_user" revision="89414496d9a7a33f32170c19adb9413eb5f61786" upstream="dev_host_x86"/>
--  <project name="code/os/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec" revision="9357d93af53b6ca453b412d1490ac80995d6a161" upstream="dev_host_x86"/>
--  <project name="code/os/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool" revision="559c0ec5a6a2cd7bcc945c7d7beafd323550ffbb" upstream="dev_host_x86"/>
+-  <project name="code/os/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec" revision="35c87d34118569b0994f735d1491f2d730f06a9f" upstream="dev_host_x86"/>
+-  <project name="code/os/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool" revision="6bca8c0cd76ef42c505dfbd3d0a9fba6e999c5f3" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/pageservice/mediaprvsrv" path="framework/pageservice/mediaprvsrv" revision="9f421ff289ae6a32c92080fe515e3f714546870e" upstream="dev_host_x86"/>
--  <project name="code/os/recovery" path="recovery" revision="b7077dde21bdbafc9ff0928bf3bfa83a79cfdec3" upstream="dev_host_x86"/>
+-  <project name="code/os/recovery" path="recovery" revision="b1d114184a935437ad961bab770e565ae0cd0f44" upstream="dev_host_x86"/>
 -  <project name="code/os/sdk/guide" path="sdk/guide" revision="292fcac7c9a2e035a4bc717c093a642610b6e2ba" upstream="dev_host_x86"/>
 -  <project name="code/os/sdk/jsni" path="sdk/jsni" revision="732586443558cf58f3299c03b8bf43c8f9a43c20" upstream="dev_host_x86"/>
 -  <project name="code/os/sdk/samples" path="sdk/samples" revision="c6417ee370faf0e8264133301b4edfbe3f8a9323" upstream="dev_host_x86"/>
@@ -999,7 +994,7 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/sdk/tools/sendlink" path="sdk/tools/sendlink" revision="bc167b010a143ffdbe1e11cc95eeed8f381b7c06" upstream="dev_host_x86"/>
 -  <project name="code/os/sdk/tools/uiautomator" path="sdk/tools/uiautomator" revision="3101105be78aeb58ab16950981dfd6369078f94d" upstream="dev_host_x86"/>
 -  <project name="code/os/sdk/tools/ydb" path="sdk/tools/ydb" revision="9bbfa694f4d9808ba2fb6a33131ea1d5db929f8c" upstream="dev_host_x86"/>
--  <project name="code/os/security/extern" path="security/extern" revision="0b4f9caa966be4f9bc5105bf708dd34e34f4185b" upstream="dev_host_x86"/>
+-  <project name="code/os/security/extern" path="security/extern" revision="a644202d5512ae23aba84400b494c06f0adac9b0" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/alsa-lib" path="third_party/alsa-lib" revision="a6c6232c8af616806f1b39e3cfd1e5d2ca7bd237" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/atrace" path="third_party/atrace" revision="897f4dfaf57cf3a357d9de757b6306b449c75823" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/attr" path="third_party/attr" revision="432e473005a0886f875ca98a3faad5de92528417" upstream="dev_host_x86"/>
@@ -1008,7 +1003,7 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/third_party/busybox" path="third_party/busybox" revision="0a0a35dc220136bbee59264f5a11110b0396c1e2" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/bzip2" path="third_party/bzip2" revision="046df26d172255dd3e0e470673229cc674a30458" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/cairo" path="third_party/cairo" revision="1e9ca521e419fa89028ce7b7db960b99999625d3" upstream="dev_host_x86"/>
--  <project name="code/os/third_party/chromium_org" path="third_party/chromium_org" revision="facb79b89620c856827cfc284548877cd955f146" upstream="dev_host_x86"/>
+-  <project name="code/os/third_party/chromium_org" path="third_party/chromium_org" revision="d1f1084708088bf7195f2fc8704f9ceede1865eb" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/connman" path="third_party/connman" revision="176e30e0dc65f9ad4fc98679a3c082460f1452e4" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/crossplay" path="third_party/crossplay" revision="f3c1f524c3d70a56891c13cfb35ec1c37754f4ca" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/csp" path="third_party/csp" revision="297bc4d665e8f8706d75ba07a07e230ca72611d2" upstream="dev_host_x86"/>
@@ -1098,7 +1093,7 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/third_party/pppd" path="third_party/pppd" revision="5f3652336386d9146f82e31c7b20ff6356f572da" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/presentproto" path="third_party/presentproto" revision="ef84007fc4a23d3897b4776906139de9d0698c2a" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/procps-ng" path="third_party/procps-ng" revision="f6f0bd01dab80d6701f9ea364c2af2573ed6cf86" upstream="dev_host_x86"/>
--  <project name="code/os/third_party/protobuf" path="third_party/protobuf" revision="50b064e9b2e75f162391b9c966c202ffad680397" upstream="dev_host_x86"/>
+-  <project name="code/os/third_party/protobuf" path="third_party/protobuf" revision="68d440a7cdbb091651fd6c1958d5342beabca3fe" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/pulseaudio" path="third_party/pulseaudio" revision="708caa5dd0f51ca6f860e4869e9c3634df39c4b7" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/python" path="third_party/python" revision="b3fd2a3a949fc200e7010edf7f4be54161b4a645" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/python-gobject" path="third_party/python-gobject" revision="b52bdecc1599e6a557456711b068eba907890758" upstream="dev_host_x86"/>
@@ -1109,14 +1104,14 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/third_party/speex" path="third_party/speex" revision="8148ed73a54711a74a9475c58c44d9173b3a84ad" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/sqlite" path="third_party/sqlite" revision="543ad6edb1fa41960c99838d943d8a73e577b961" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/strace" path="third_party/strace" revision="9ffcaaaac6e09d0b36fd84e8601ca9d87abb4043" upstream="dev_host_x86"/>
--  <project name="code/os/third_party/systemd" path="third_party/systemd" revision="613cdeb0685303bc6a7b685f3e1c05356d655c50" upstream="dev_host_x86"/>
+-  <project name="code/os/third_party/systemd" path="third_party/systemd" revision="02be89fe258ccda233d4e42849dc2896fb6603d5" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/tzdata" path="third_party/tzdata" revision="788a384760e380ae4d2ae40e02352770f37cbca3" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/util-linux" path="third_party/util-linux" revision="cd88e0cc71aa02ca34d45a710787c397a3827856" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/valgrind" path="third_party/valgrind" revision="9d3a5e555ada0ff6efd04380bdf6d8af7cf6cebd" upstream="dev_host_x86"/>
--  <project name="code/os/third_party/webrtc/sdk-bin" path="third_party/webrtc/sdk-bin" revision="f6c5e2d6da83920a05d2c78122b52d64477e32c9" upstream="dev_host_x86"/>
--  <project name="code/os/third_party/webrtc/webrtc" path="third_party/webrtc/webrtc" revision="f8724c526bbeffc4f1b054a1e451cd20aa82660a" upstream="dev_host_x86"/>
--  <project name="code/os/third_party/webrtc/woogeen" path="third_party/webrtc/woogeen" revision="78ddbcde7d73ec3b52b8946510ae42f0b7ce1b7b" upstream="dev_host_x86"/>
--  <project name="code/os/third_party/webrtc/ybinding" path="third_party/webrtc/ybinding" revision="c89668e93964b5ce6e4a643e94cd87f1e755d3fa" upstream="dev_host_x86"/>
+-  <project name="code/os/third_party/webrtc/sdk-bin" path="third_party/webrtc/sdk-bin" revision="0fb0425979587a4b6a454c8f3c5c3abc85e1d676" upstream="dev_host_x86"/>
+-  <project name="code/os/third_party/webrtc/webrtc" path="third_party/webrtc/webrtc" revision="bc9d3c82edf8f2df8d968a62f60776fa0d3c3b3b" upstream="dev_host_x86"/>
+-  <project name="code/os/third_party/webrtc/woogeen" path="third_party/webrtc/woogeen" revision="d505c6ccd2cbe6bb27e0b7c0057bedd52ee056c0" upstream="dev_host_x86"/>
+-  <project name="code/os/third_party/webrtc/ybinding" path="third_party/webrtc/ybinding" revision="063d8de73e321b4d62a2bdfcc0b5adcefc863b71" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/wpa_supplicant" path="third_party/wpa_supplicant" revision="2082e6db2af5d3a4a07184d18c0576227e9bb6fa" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/xmlsec1" path="third_party/xmlsec1" revision="7127ff255e2260fc7ce45a96cef6cd01e5819ed6" upstream="dev_host_x86"/>
 -  <project name="code/os/third_party/xz" path="third_party/xz" revision="fb379069cc7cea8e62357516eeeb02926dc845f9" upstream="dev_host_x86"/>
@@ -1133,8 +1128,8 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/vendor/intel/librealsense_persontracking" path="vendor/intel/librealsense_persontracking" revision="30ef1f1868c68bee05b9b213255f7415b125e4d4" upstream="dev_host_x86"/>
 -  <project name="code/os/vendor/intel/libva" path="vendor/intel/libva" revision="f6f60796258099474ab143d3bc53678f6641327b" upstream="dev_host_x86"/>
 -  <project name="code/os/vendor/intel/libva-intel-driver" path="vendor/intel/libva-intel-driver" revision="a399e86b6456e2aaa0fb49016707fa7a33ca27d8" upstream="dev_host_x86"/>
--  <project name="code/os/vendor/intel/libyami" path="vendor/intel/libyami" revision="4025ade53e96000ee04753552ccddafa7e2ca6fa" upstream="dev_host_x86"/>
--  <project name="code/os/vendor/intel/libyami-utils" path="vendor/intel/libyami-utils" revision="e8fcbb9c1a36eaccb3b7cc429031fd7b69aa37da" upstream="dev_host_x86"/>
+-  <project name="code/os/vendor/intel/libyami" path="vendor/intel/libyami" revision="eaf5c7902bcacb75fcc95b7e7ebd001833fe3ab7" upstream="dev_host_x86"/>
+-  <project name="code/os/vendor/intel/libyami-utils" path="vendor/intel/libyami-utils" revision="eaf509ae8d90f3b6dab9148745b26ebaf8aae03a" upstream="dev_host_x86"/>
 -  <project name="code/os/vendor/intel/linux/kernel_yunbot" path="vendor/intel/linux/kernel_yunbot" revision="09801588a3667b919d6ec1878ea51218bc126a9a" upstream="dev_host_x86"/>
 -  <project name="code/os/vendor/intel/linux/kernel_yunhal" path="vendor/intel/linux/kernel_yunhal" revision="2ffbe0ec48fd3ccf1e373c96c039b3cc0cebbeaa" upstream="dev_host_x86"/>
 -  <project name="code/os/vendor/intel/lz4" path="vendor/intel/lz4" revision="ecae85cb3c7d0f6a07fec87e82949e47e28d57a2" upstream="dev_host_x86"/>
@@ -1144,13 +1139,14 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/vendor/intel/sensor/cht/ish-sensors" path="vendor/intel/sensor/cht/ish-sensors" revision="c0613a68bf25ae60d0ec39f2b81721a17eccb04d" upstream="dev_host_x86"/>
 -  <project name="code/os/vendor/intel/sensor/cht/libsensorhub" path="vendor/intel/sensor/cht/libsensorhub" revision="16e6ec4d1a68c8dfb950f3759e861b1e10e4b550" upstream="dev_host_x86"/>
 -  <project name="code/os/vm/codecache" path="vm/codecache" revision="a620d343d797cebcd03aef6f9e7dfdfb59dc9046" upstream="dev_host_x86"/>
--  <project name="code/os/vm/jsnihelper" path="vm/jsnihelper" revision="9fac32e339e6185772b0bb532c2247d9cb9ace03" upstream="dev_host_x86"/>
--  <project name="code/os/vm/node" path="vm/node" revision="f6786d50f3bc56dcfd233eefd4067376f5997a60" upstream="dev_host_x86"/>
--  <project name="code/os/vm/v8" path="vm/v8" revision="e1a7ae6b0869818dbd20a62465a69223419b0d74" upstream="dev_host_x86"/>
--  <project name="code/os/xmake" path="xmake" revision="0a30aa5dd06de60ee0d72f5a70334a2cdc3a69cf" upstream="dev_host_x86"/>
+-  <project name="code/os/vm/jsni" path="vm/jsni" revision="37277238a00644855837300d0e28b508fcda5c62" upstream="dev_host_x86"/>
+-  <project name="code/os/vm/jsnihelper" path="vm/jsnihelper" revision="c04c732d96a7be060b4e7bc5e2c3b140ece1e0d0" upstream="dev_host_x86"/>
+-  <project name="code/os/vm/node" path="vm/node" revision="c21307b3bad419a8b51d00d4cdf4430da9d3f9c0" upstream="dev_host_x86"/>
+-  <project name="code/os/vm/v8" path="vm/v8" revision="7b8558e7886fee07de22046d83b5a4760d95953d" upstream="dev_host_x86"/>
+-  <project name="code/os/xmake" path="xmake" revision="64ea6dbae342fc5ef2e8a2eedc680def5605841b" upstream="dev_host_x86"/>
 -  <project name="code/os/yunhal/devicetree" path="yunhal/devicetree" revision="3081a9ef7f3af9e42f0549201457446cf9d32d6f" upstream="dev_host_x86"/>
 -  <project name="code/os/yunhal/droid" path="yunhal/droid" revision="5c91b08a1a5b12066d5599be1d2a263f86c67a5e" upstream="dev_host_x86"/>
--  <project name="code/os/yunhal/modules" path="yunhal/modules" revision="75527d1adb89f29a843ecc31c2f5e7762a853983" upstream="dev_host_x86"/>
+-  <project name="code/os/yunhal/modules" path="yunhal/modules" revision="ca4e4b6eedab0ff3988aa3921f2c16ce74996337" upstream="dev_host_x86"/>
 -  <project name="code/os/yunhal/schema" path="yunhal/schema" revision="f4bc2d857850e93af7eea1d7a6012cbf3a09e92b" upstream="dev_host_x86"/>
 -  <project name="code/os/sdk/tools/pagecenter" path="sdk/tools/pagecenter" revision="b2130707dea8a995c0a005174c77bcd954345604" upstream="dev_host_x86"/>
 -  <project name="code/os/framework/nativeservice/sensord" path="framework/nativeservice/sensord" revision="f846dd452b7545eafa84bf7cc8774c1bd5a5122b" upstream="dev_host_x86"/>
@@ -1159,13 +1155,10 @@ index 3452bd3..aab86a1 100644
 -  <project name="code/os/third_party/json-c" path="third_party/json-c" revision="b9f894ec03854b8dc6f189503e49781ad7e336c6" upstream="dev_host_x86"/>
 +  <project name="a/y_os_a/prebuilts/tools/intel" path="prebuilts/tools/intel" revision="9048c550307b5e222bd75f94eb363e863a49c8ab" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/prebuilts/yunos3.0" path="prebuilts/yunos3.0" revision="65df5fb6dca316608443b709a6e3fd30c620db4a" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_binary_debug" path="prebuilts/yunospick_binary_debug" revision="f013cea932ba4acf1f1d23c3f9935452f74f6a34" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_binary_eng" path="prebuilts/yunospick_binary_eng" revision="207128e02c8d1ec8c92663f57a25798d3479d948" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_binary_user" path="prebuilts/yunospick_binary_user" revision="89414496d9a7a33f32170c19adb9413eb5f61786" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec" revision="9357d93af53b6ca453b412d1490ac80995d6a161" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool" revision="559c0ec5a6a2cd7bcc945c7d7beafd323550ffbb" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec" revision="35c87d34118569b0994f735d1491f2d730f06a9f" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool" revision="6bca8c0cd76ef42c505dfbd3d0a9fba6e999c5f3" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/providers/mediaprovider" path="framework/pageservice/mediaprvsrv" revision="9f421ff289ae6a32c92080fe515e3f714546870e" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/recovery" path="recovery" revision="b7077dde21bdbafc9ff0928bf3bfa83a79cfdec3" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/recovery" path="recovery" revision="b1d114184a935437ad961bab770e565ae0cd0f44" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/guide" path="sdk/guide" revision="292fcac7c9a2e035a4bc717c093a642610b6e2ba" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/jsni" path="sdk/jsni" revision="732586443558cf58f3299c03b8bf43c8f9a43c20" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/samples" path="sdk/samples" revision="c6417ee370faf0e8264133301b4edfbe3f8a9323" upstream="y_os_a/dev_host_x86"/>
@@ -1183,7 +1176,7 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/sdk/tools/sendlink" path="sdk/tools/sendlink" revision="bc167b010a143ffdbe1e11cc95eeed8f381b7c06" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/uiautomator" path="sdk/tools/uiautomator" revision="3101105be78aeb58ab16950981dfd6369078f94d" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/ydb" path="sdk/tools/ydb" revision="9bbfa694f4d9808ba2fb6a33131ea1d5db929f8c" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/security/extern" path="security/extern" revision="0b4f9caa966be4f9bc5105bf708dd34e34f4185b" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/security/extern" path="security/extern" revision="a644202d5512ae23aba84400b494c06f0adac9b0" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/alsa-lib" path="third_party/alsa-lib" revision="a6c6232c8af616806f1b39e3cfd1e5d2ca7bd237" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/atrace" path="third_party/atrace" revision="897f4dfaf57cf3a357d9de757b6306b449c75823" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/attr" path="third_party/attr" revision="432e473005a0886f875ca98a3faad5de92528417" upstream="y_os_a/dev_host_x86"/>
@@ -1192,7 +1185,7 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/third_party/busybox" path="third_party/busybox" revision="0a0a35dc220136bbee59264f5a11110b0396c1e2" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/bzip2" path="third_party/bzip2" revision="046df26d172255dd3e0e470673229cc674a30458" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/cairo" path="third_party/cairo" revision="1e9ca521e419fa89028ce7b7db960b99999625d3" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/chromium_org" path="third_party/chromium_org" revision="facb79b89620c856827cfc284548877cd955f146" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/chromium_org" path="third_party/chromium_org" revision="d1f1084708088bf7195f2fc8704f9ceede1865eb" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/connman" path="third_party/connman" revision="176e30e0dc65f9ad4fc98679a3c082460f1452e4" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/crossplay" path="third_party/crossplay" revision="f3c1f524c3d70a56891c13cfb35ec1c37754f4ca" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/csp" path="third_party/csp" revision="297bc4d665e8f8706d75ba07a07e230ca72611d2" upstream="y_os_a/dev_host_x86"/>
@@ -1282,7 +1275,7 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/third_party/pppd" path="third_party/pppd" revision="5f3652336386d9146f82e31c7b20ff6356f572da" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/presentproto" path="third_party/presentproto" revision="ef84007fc4a23d3897b4776906139de9d0698c2a" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/procps-ng" path="third_party/procps-ng" revision="f6f0bd01dab80d6701f9ea364c2af2573ed6cf86" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/protobuf" path="third_party/protobuf" revision="50b064e9b2e75f162391b9c966c202ffad680397" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/protobuf" path="third_party/protobuf" revision="68d440a7cdbb091651fd6c1958d5342beabca3fe" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/pulseaudio" path="third_party/pulseaudio" revision="708caa5dd0f51ca6f860e4869e9c3634df39c4b7" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/python" path="third_party/python" revision="b3fd2a3a949fc200e7010edf7f4be54161b4a645" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/python-gobject" path="third_party/python-gobject" revision="b52bdecc1599e6a557456711b068eba907890758" upstream="y_os_a/dev_host_x86"/>
@@ -1293,14 +1286,14 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/third_party/speex" path="third_party/speex" revision="8148ed73a54711a74a9475c58c44d9173b3a84ad" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/sqlite" path="third_party/sqlite" revision="543ad6edb1fa41960c99838d943d8a73e577b961" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/strace" path="third_party/strace" revision="9ffcaaaac6e09d0b36fd84e8601ca9d87abb4043" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/systemd_2_19" path="third_party/systemd" revision="613cdeb0685303bc6a7b685f3e1c05356d655c50" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/systemd_2_19" path="third_party/systemd" revision="02be89fe258ccda233d4e42849dc2896fb6603d5" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/tzdata" path="third_party/tzdata" revision="788a384760e380ae4d2ae40e02352770f37cbca3" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/util-linux" path="third_party/util-linux" revision="cd88e0cc71aa02ca34d45a710787c397a3827856" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/valgrind" path="third_party/valgrind" revision="9d3a5e555ada0ff6efd04380bdf6d8af7cf6cebd" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/webrtc/sdk-bin" path="third_party/webrtc/sdk-bin" revision="f6c5e2d6da83920a05d2c78122b52d64477e32c9" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/webrtc/webrtc" path="third_party/webrtc/webrtc" revision="f8724c526bbeffc4f1b054a1e451cd20aa82660a" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/webrtc/woogeen" path="third_party/webrtc/woogeen" revision="78ddbcde7d73ec3b52b8946510ae42f0b7ce1b7b" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/webrtc/ybinding" path="third_party/webrtc/ybinding" revision="c89668e93964b5ce6e4a643e94cd87f1e755d3fa" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/webrtc/sdk-bin" path="third_party/webrtc/sdk-bin" revision="0fb0425979587a4b6a454c8f3c5c3abc85e1d676" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/webrtc/webrtc" path="third_party/webrtc/webrtc" revision="bc9d3c82edf8f2df8d968a62f60776fa0d3c3b3b" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/webrtc/woogeen" path="third_party/webrtc/woogeen" revision="d505c6ccd2cbe6bb27e0b7c0057bedd52ee056c0" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/webrtc/ybinding" path="third_party/webrtc/ybinding" revision="063d8de73e321b4d62a2bdfcc0b5adcefc863b71" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/wpa_supplicant" path="third_party/wpa_supplicant" revision="2082e6db2af5d3a4a07184d18c0576227e9bb6fa" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/xmlsec1" path="third_party/xmlsec1" revision="7127ff255e2260fc7ce45a96cef6cd01e5819ed6" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/xz" path="third_party/xz" revision="fb379069cc7cea8e62357516eeeb02926dc845f9" upstream="y_os_a/dev_host_x86"/>
@@ -1317,8 +1310,8 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/vendor/intel/librealsense_persontracking" path="vendor/intel/librealsense_persontracking" revision="30ef1f1868c68bee05b9b213255f7415b125e4d4" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/libva" path="vendor/intel/libva" revision="f6f60796258099474ab143d3bc53678f6641327b" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/libva-intel-driver" path="vendor/intel/libva-intel-driver" revision="a399e86b6456e2aaa0fb49016707fa7a33ca27d8" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vendor/intel/libyami" path="vendor/intel/libyami" revision="4025ade53e96000ee04753552ccddafa7e2ca6fa" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vendor/intel/libyami-utils" path="vendor/intel/libyami-utils" revision="e8fcbb9c1a36eaccb3b7cc429031fd7b69aa37da" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vendor/intel/libyami" path="vendor/intel/libyami" revision="eaf5c7902bcacb75fcc95b7e7ebd001833fe3ab7" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vendor/intel/libyami-utils" path="vendor/intel/libyami-utils" revision="eaf509ae8d90f3b6dab9148745b26ebaf8aae03a" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/linux/kernel_yunbot" path="vendor/intel/linux/kernel_yunbot" revision="09801588a3667b919d6ec1878ea51218bc126a9a" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/linux_yunhal" path="vendor/intel/linux/kernel_yunhal" revision="2ffbe0ec48fd3ccf1e373c96c039b3cc0cebbeaa" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/lz4" path="vendor/intel/lz4" revision="ecae85cb3c7d0f6a07fec87e82949e47e28d57a2" upstream="y_os_a/dev_host_x86"/>
@@ -1328,13 +1321,14 @@ index 3452bd3..aab86a1 100644
 +  <project name="a/y_os_a/vendor/intel/sensor/cht/ish-sensors" path="vendor/intel/sensor/cht/ish-sensors" revision="c0613a68bf25ae60d0ec39f2b81721a17eccb04d" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/sensor/cht/libsensorhub" path="vendor/intel/sensor/cht/libsensorhub" revision="16e6ec4d1a68c8dfb950f3759e861b1e10e4b550" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vm/codecache" path="vm/codecache" revision="a620d343d797cebcd03aef6f9e7dfdfb59dc9046" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vm/jsnihelper" path="vm/jsnihelper" revision="9fac32e339e6185772b0bb532c2247d9cb9ace03" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vm/node" path="vm/node" revision="f6786d50f3bc56dcfd233eefd4067376f5997a60" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vm/v8" path="vm/v8" revision="e1a7ae6b0869818dbd20a62465a69223419b0d74" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/xmake" path="xmake" revision="0a30aa5dd06de60ee0d72f5a70334a2cdc3a69cf" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vm/jsni" path="vm/jsni" revision="37277238a00644855837300d0e28b508fcda5c62" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vm/jsnihelper" path="vm/jsnihelper" revision="c04c732d96a7be060b4e7bc5e2c3b140ece1e0d0" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vm/node" path="vm/node" revision="c21307b3bad419a8b51d00d4cdf4430da9d3f9c0" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vm/v8" path="vm/v8" revision="7b8558e7886fee07de22046d83b5a4760d95953d" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/xmake" path="xmake" revision="64ea6dbae342fc5ef2e8a2eedc680def5605841b" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/yunhal/devicetree" path="yunhal/devicetree" revision="3081a9ef7f3af9e42f0549201457446cf9d32d6f" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/yunhal/droid" path="yunhal/droid" revision="5c91b08a1a5b12066d5599be1d2a263f86c67a5e" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/yunhal/modules" path="yunhal/modules" revision="75527d1adb89f29a843ecc31c2f5e7762a853983" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/yunhal/modules" path="yunhal/modules" revision="ca4e4b6eedab0ff3988aa3921f2c16ce74996337" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/yunhal/schema" path="yunhal/schema" revision="f4bc2d857850e93af7eea1d7a6012cbf3a09e92b" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/pagecenter" path="sdk/tools/pagecenter" revision="b2130707dea8a995c0a005174c77bcd954345604" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/platform/core/system/sensord" path="framework/nativeservice/sensord" revision="f846dd452b7545eafa84bf7cc8774c1bd5a5122b" upstream="y_os_a/dev_host_x86"/>

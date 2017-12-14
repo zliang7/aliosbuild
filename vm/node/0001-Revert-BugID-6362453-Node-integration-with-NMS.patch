@@ -1,0 +1,45 @@
+From 57d07ff0c9ab6638f5fd7e5d82c338b59b0d560b Mon Sep 17 00:00:00 2001
+From: Zhenyu Liang <zhenyu.liang@intel.com>
+Date: Thu, 7 Dec 2017 02:52:45 +0800
+Subject: [PATCH] Revert "BugID:6362453:Node integration with NMS."
+
+This reverts commit 12f2538febb247f7e8ee9027c14b72c6a911e464.
+---
+ lib/http.js  | 3 +--
+ lib/https.js | 2 --
+ 2 files changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/lib/http.js b/lib/http.js
+index 7572bda..64788dd 100644
+--- a/lib/http.js
++++ b/lib/http.js
+@@ -24,8 +24,7 @@ const agent = require('_http_agent');
+ const Agent = exports.Agent = agent.Agent;
+ exports.globalAgent = agent.globalAgent;
+ 
+-var Module = require("module");
+-const client = Module.moduleRequire("http_wrap");
++const client = require('_http_client');
+ const ClientRequest = exports.ClientRequest = client.ClientRequest;
+ 
+ exports.request = function(options, cb) {
+diff --git a/lib/https.js b/lib/https.js
+index 9a90639..abe4a20 100644
+--- a/lib/https.js
++++ b/lib/https.js
+@@ -1,4 +1,3 @@
+-// jscs:disable
+ 'use strict';
+ 
+ const tls = require('tls');
+@@ -161,7 +160,6 @@ exports.request = function(options, cb) {
+     options = util._extend({}, options);
+   }
+   options._defaultAgent = globalAgent;
+-  options.protocol = 'https:';
+   return http.request(options, cb);
+ };
+ 
+-- 
+1.9.1
+

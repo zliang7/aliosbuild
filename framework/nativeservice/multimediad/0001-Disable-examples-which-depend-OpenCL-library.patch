@@ -1,16 +1,15 @@
-From 51568d68a3b58dea96e36211f1a0d2928d8c1274 Mon Sep 17 00:00:00 2001
+From 07cf8da7a9ca0003458dee844fc63d92dcbe5672 Mon Sep 17 00:00:00 2001
 From: Zhenyu Liang <zhenyu.liang@intel.com>
-Date: Fri, 15 Dec 2017 04:19:34 +0800
+Date: Thu, 14 Dec 2017 05:26:05 +0800
 Subject: [PATCH] Disable examples which depend OpenCL library
 
-Change-Id: I843ab063c29355299d0f220de45d1301a1c03957
-Tracked-On:
+Change-Id: I8a2920caffbd0eda3bf1a426471dc4449b19a4c0
 ---
- examples/comps/yunos.mk | 22 +++++++++++-----------
- 1 file changed, 11 insertions(+), 11 deletions(-)
+ examples/comps/yunos.mk | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
 
 diff --git a/examples/comps/yunos.mk b/examples/comps/yunos.mk
-index 587d1ed..5369eaa 100755
+index e70a124..aac11b8 100755
 --- a/examples/comps/yunos.mk
 +++ b/examples/comps/yunos.mk
 @@ -30,17 +30,17 @@ LOCAL_MODULE:= libVideoFilterGL
@@ -38,7 +37,7 @@ index 587d1ed..5369eaa 100755
                          $(hal-includes)             \
                          $(WINDOWSURFACE_INCLUDE)    \
                          $(YUNOS_ROOT)/yunhal/droid/graphics/opencl
-@@ -49,11 +49,11 @@ LOCAL_C_INCLUDES +=     $(graphics-includes)        \
+@@ -49,15 +49,15 @@ LOCAL_C_INCLUDES +=     $(graphics-includes)        \
  # REQUIRE_WPC = 1
  # REQUIRE_EGL = 1
  # REQUIRE_SURFACE = 1
@@ -46,6 +45,13 @@ index 587d1ed..5369eaa 100755
 -LOCAL_SHARED_LIBRARIES += libgfx-cutils
 +#include $(MM_ROOT_PATH)/base/build/xmake_req_libs.mk
 +#LOCAL_SHARED_LIBRARIES += libgfx-cutils
+ 
+-LOCAL_SRC_FILES += buffer_pool_surface.cc
+-LOCAL_C_INCLUDES += $(multimedia-surfacetexture-includes)
+-LOCAL_SHARED_LIBRARIES += libmediasurfacetexture
++#LOCAL_SRC_FILES += buffer_pool_surface.cc
++#LOCAL_C_INCLUDES += $(multimedia-surfacetexture-includes)
++#LOCAL_SHARED_LIBRARIES += libmediasurfacetexture
  
 -LOCAL_MODULE:= libVideoFilterCL
 -include $(BUILD_SHARED_LIBRARY)

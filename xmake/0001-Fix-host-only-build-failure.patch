@@ -1,14 +1,14 @@
-From 3e62b2a24828de8325a510ca4fbdc896bbc7dd8f Mon Sep 17 00:00:00 2001
+From c10c6e439569991a84521b3d68d809db442a344e Mon Sep 17 00:00:00 2001
 From: Zhenyu Liang <zhenyu.liang@intel.com>
-Date: Fri, 15 Dec 2017 04:17:15 +0800
+Date: Thu, 14 Dec 2017 05:24:14 +0800
 Subject: [PATCH] Fix host-only build failure
 
-Change-Id: Iab322d191a5873b102d1380bd9ee42422745e1fb
-Tracked-On:
+Change-Id: I6a8272d6a968ed1ec3dbfd621d8a8e3e0e561b62
 ---
- mk_yunos.sh                    | 5 +++++
- prebuilts/devtools/mk-image.sh | 2 +-
- 2 files changed, 6 insertions(+), 1 deletion(-)
+ mk_yunos.sh                                  |  5 +++++
+ platform/tablet/product/yunhal/xmake.product | 10 +++++-----
+ prebuilts/devtools/mk-image.sh               |  2 +-
+ 3 files changed, 11 insertions(+), 6 deletions(-)
 
 diff --git a/mk_yunos.sh b/mk_yunos.sh
 index ebc3305..02e9a9d 100755
@@ -26,6 +26,27 @@ index ebc3305..02e9a9d 100755
          ;;
    esac
    if [ -z "$BUILD_BOARD" ]; then # still couldn't match to the board
+diff --git a/platform/tablet/product/yunhal/xmake.product b/platform/tablet/product/yunhal/xmake.product
+index c7cba00..9ef1825 100644
+--- a/platform/tablet/product/yunhal/xmake.product
++++ b/platform/tablet/product/yunhal/xmake.product
+@@ -245,11 +245,11 @@
+         wifiintelhal \
+         syncmanagerd \ 
+         bootanimation \
+-        djangod \
+-        protobuf \
+-        intelligenced \
+-        intelligence-common \
+-        libintelligence
++        djangod
++#       protobuf \
++#       intelligenced \
++#       intelligence-common \
++#       libintelligence
+ 
+ #framework-libs
+ --pkgs-included \
 diff --git a/prebuilts/devtools/mk-image.sh b/prebuilts/devtools/mk-image.sh
 index 99a3e6c..2c788fb 100755
 --- a/prebuilts/devtools/mk-image.sh
