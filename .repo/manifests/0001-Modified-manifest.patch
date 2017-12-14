@@ -1,20 +1,20 @@
-From 44cca0a16243f0ac8a0e28019f1fa31781c7db2e Mon Sep 17 00:00:00 2001
+From 6ea23d8ad87fd46f5a4c7eed1f81a71945e3c4b6 Mon Sep 17 00:00:00 2001
 From: wangtao <tao.w.wang@intel.com>
-Date: Fri, 4 Aug 2017 12:10:30 +0800
+Date: Mon, 11 Sep 2017 12:16:40 +0800
 Subject: [PATCH] Modified manifest
 
 ---
- default.xml      | 643 ++++++++++++++++++++++++++++---------------------------
+ default.xml      | 645 ++++++++++++++++++++++++++++---------------------------
  dev_host_x86     |   1 +
- manifest_tag.xml | 643 ++++++++++++++++++++++++++++---------------------------
- 3 files changed, 645 insertions(+), 642 deletions(-)
+ manifest_tag.xml | 645 ++++++++++++++++++++++++++++---------------------------
+ 3 files changed, 647 insertions(+), 644 deletions(-)
  create mode 120000 dev_host_x86
 
 diff --git a/default.xml b/default.xml
-index 8485d74..17beb14 100644
+index cb737bb..42f79ac 100644
 --- a/default.xml
 +++ b/default.xml
-@@ -1,329 +1,330 @@
+@@ -1,330 +1,331 @@
  <?xml version="1.0" encoding="utf-8"?>
  <manifest>
 -  <remote fetch="../.." name="extyunos" review="http://gerrit-custom2.yunos.com:8080"/>
@@ -35,6 +35,7 @@ index 8485d74..17beb14 100644
 -  <project name="git/yunos/tianmu/apps/clock" path="apps/clock"/>
 -  <project name="git/yunos/tianmu/apps/dials" path="apps/dials"/>
 -  <project name="git/yunos/tianmu/apps/download" path="apps/download"/>
+-  <project name="git/yunos/tianmu/apps/eyesprotection" path="apps/tablet/eyesprotection"/>
 -  <project name="git/yunos/tianmu/apps/homeshell" path="apps/homeshell"/>
 -  <project name="git/yunos/tianmu/apps/ime" path="apps/ime"/>
 -  <project name="git/yunos/tianmu/apps/interconnection" path="apps/interconnection"/>
@@ -174,6 +175,7 @@ index 8485d74..17beb14 100644
 +  <project name="a/y_os_a/apps/clock" path="apps/clock"/>
 +  <project name="a/y_os_a/apps/dials" path="apps/dials"/>
 +  <project name="a/y_os_a/apps/download" path="apps/download"/>
++  <project name="a/y_os_a/apps/eyesprotection" path="apps/tablet/eyesprotection"/>
 +  <project name="a/y_os_a/apps/homeshell" path="apps/homeshell"/>
 +  <project name="a/y_os_a/apps/ime" path="apps/ime"/>
 +  <project name="a/y_os_a/apps/interconnection" path="apps/interconnection"/>
@@ -675,69 +677,70 @@ index 0000000..41e6f50
 +default.xml
 \ No newline at end of file
 diff --git a/manifest_tag.xml b/manifest_tag.xml
-index effdbb4..63d1620 100644
+index f469d3b..b29c5b4 100644
 --- a/manifest_tag.xml
 +++ b/manifest_tag.xml
-@@ -1,329 +1,330 @@
+@@ -1,330 +1,331 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <manifest>
 -  <remote fetch="../.." name="extyunos" review="http://gerrit-custom2.yunos.com:8080"/>
 -  <default remote="extyunos" revision="dev_host_x86" sync-c="true" sync-j="4"/>
--  <project name="code/device/generic/goldfish" path="container/vhal" revision="982bcf3aff9eee453aa18a0c77db5aafe24ddf7d" upstream="dev_host_x86"/>
--  <project name="code/os/apps/ucbrowser" path="apps/ucbrowser" revision="4e59219348483eeb5b5c5c14222d3c61a5b9b802" upstream="dev_host_x86"/>
--  <project name="code/platform/external/qemu" path="container/containerd" revision="c2fb36e93b15c9f35a2f10a99c1fb3b1bae3c675" upstream="dev_host_x86"/>
+-  <project name="code/device/generic/goldfish" path="container/vhal" revision="6f623de9ec59bc6c958864aa301819ea90caa0bf" upstream="dev_host_x86"/>
+-  <project name="code/os/apps/ucbrowser" path="apps/ucbrowser" revision="c46879c038eec1dcd7dd009e3902085eb4e83adb" upstream="dev_host_x86"/>
+-  <project name="code/platform/external/qemu" path="container/containerd" revision="14e50b1fe4224f6dc3a084a2c676f2c6d49f678a" upstream="dev_host_x86"/>
 -  <project name="code/platform/hardware/libhardware" path="hal/libhardware" revision="6ff58f1c76ea6c7e0810b4234dd8328453e7b08e" upstream="dev_host_x86"/>
 -  <project name="code/platform/hardware/libhardware_legacy" path="hal/libhardware_legacy" revision="bc341660071210855f7e796398fce32fb22911fe" upstream="dev_host_x86"/>
--  <project name="code/platform/linux/modules" path="vendor/intel/linux/modules" revision="e7e8ab3444c62b4daf277bbeda26cfda522e8298" upstream="dev_host_x86"/>
+-  <project name="code/platform/linux/modules" path="vendor/intel/linux/modules" revision="d7cd693ad0c3d2ce74970a0624e3e22477fa69f2" upstream="dev_host_x86"/>
 -  <project name="code/platform/vendor/intel/tool" path="vendor/intel/tool" revision="67ec0f750c92017c554432c7dea8ae723b72f570" upstream="dev_host_x86"/>
--  <project name="git/external/chromium/third_party/adhd" path="framework/nativeservice/audiosrvd" revision="7994e0585b00200f46b3ea3100f26dbab01b3a42" upstream="dev_host_x86"/>
+-  <project name="git/external/chromium/third_party/adhd" path="framework/nativeservice/audiosrvd" revision="94168e57460d11e13398b4fdd5362d27c4231129" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/METAINFO" path="METAINFO" revision="f71c449dc57cc640b3c4093fc6a16ca0a93c61e1" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/bootanimation" path="apps/bootanimation" revision="3dac837e1cd4c266c5ae1576f07c6662d6746145" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/browser" path="apps/browser" revision="8ae302a573d9cddb43cb587a77d01368e1203b86" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/apps/camera" path="apps/camera" revision="39bba45c03da92710aeec118c4c42d9d4c92f9ed" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/apps/camera" path="apps/camera" revision="4fa86bb3dbdd8909cb71122f1a8afeafe8bb50af" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/cardshell" path="apps/cardshell" revision="248670782023c4df9096c1d4408cc9dfa2084c2b" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/apps/clock" path="apps/clock" revision="d8d0c39479e610aec418c327f4ac54bc5da2260b" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/apps/clock" path="apps/clock" revision="76e6b6c638a07e7a7bf0f09ff7884cd401ca4d62" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/dials" path="apps/dials" revision="2c49cc144e4a35c7d72ee249daed50888f5757c0" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/download" path="apps/download" revision="07caf0d90335d5073e7069e616303dc1fabd6386" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/apps/eyesprotection" path="apps/tablet/eyesprotection" revision="12044fe31ea870de11caa61e1fb6fb7a8a760967" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/homeshell" path="apps/homeshell" revision="751162bf90150571644f0f5bdebaf1cae66353ca" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/ime" path="apps/ime" revision="c64447c95ab64a999a3acd8631a7ade12d272230" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/interconnection" path="apps/interconnection" revision="7d21aa40d83d37bc15e200612ddbd9d060ad410a" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/mms" path="apps/mms" revision="ac35a56cfa9fc738d63b2695876bf991c31b6437" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/notification" path="apps/notification" revision="b1db137cc6ae3fede8fb59ed1536388bc2c3091d" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/syncapp" path="apps/syncapp" revision="1c29e689ff8667c548382dff54d549da12238eb6" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/apps/systemui" path="apps/systemui" revision="6d76de68e05214c8dcf83ea3bfa5e088378516b1" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/apps/systemui" path="apps/systemui" revision="c42b5ba0a406126d9cd823c661fa44ccfdedd584" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/tablet/bootwizard" path="apps/tablet/bootwizard" revision="621314849d3f4c4a392dd62f32769bc016cf80e5" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/apps/tablet/cardshell" path="apps/tablet/cardshell" revision="abc877a5680dffb443100901229471e58c7f6cfe" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/apps/tablet/ime" path="apps/tablet/ime" revision="f797de47bc987428200eb9aa03d90c12978119c7" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/apps/tablet/setting" path="apps/tablet/setting" revision="59196152305030d11996869112c9e14151972dc3" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/apps/tablet/cardshell" path="apps/tablet/cardshell" revision="4316976723af96e8b464da0157c0e9bf149a46d5" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/apps/tablet/ime" path="apps/tablet/ime" revision="0f1173e0f054aa10a335f7478d1574bad0a9ad4f" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/apps/tablet/setting" path="apps/tablet/setting" revision="e8ad32b9102f4b6c3138348b8789c588d28c2527" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/tablet/webrtc" path="apps/tablet/webrtc" revision="ede93853c57ae7291ea970b9a875d8643170f5a6" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/taskmanagement" path="apps/taskmanagement" revision="d347f78a1d6ee1f7067eb822554a08bb9b129564" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/apps/weblauncher" path="apps/weblauncher" revision="32d2a8d57ca7b0267a400ed030585f777231177c" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/container/android-core" path="container/android-core" revision="10a272f00e88a1e5e9ef933367ac3e68ea37a6ff" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/container/android-core" path="container/android-core" revision="70bb0b616fa24819e266a2157b98d1b5665beeed" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/core/foundation" path="third_party/corefoundation" revision="c12ce6afb20d9713f6213c5a3fb40e74954bfd19" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/device/hp/peacock/firmware" path="device/hp/peacock/firmware" revision="84f5bea51ce795ab2fc9bae519e2e0bf343299b9" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/device/hp/peacock/led" path="device/hp/peacock/led" revision="bfb24761eff51c00d6d945bb729fcff3160d6ec6" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/base" path="framework/libs/base" revision="d6ce6e6f0f3e662160721291ec9fd72dae3d4a57" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/battery" path="framework/libs/battery" revision="85e8921db9764420bddcd0d43d98b7de87d2b0eb" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/cloudcode" path="framework/libs/cloudcode" revision="61826ca3508a898902514fe48bba6ffd30d56043" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/libs/data" path="framework/libs/data" revision="6138cdcbdfc0b03d63b423533661dae9f95a6a60" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/libs/data" path="framework/libs/data" revision="a999ba62d6f1e8ea1851263fac09c427c32b9992" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/gcontext" path="framework/libs/gcontext" revision="eec1d58a32399b55ef950afe7968326d59b405c0" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/libs/graphics" path="framework/libs/graphics" revision="a51277cc17a2fa1262a2ea26fad28508bff464be" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/libs/gui/gesture" path="framework/libs/gui/gesture" revision="6c8a20436a40b3df3f05f7d530be153259ac70bb" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/libs/gui/surface" path="framework/libs/gui/surface" revision="4e8dc431873c6e6ac507101f70860a1529b8011b" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/libs/graphics" path="framework/libs/graphics" revision="d06bbf24eb9e988b065b28f940748bcfd4cb410f" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/libs/gui/gesture" path="framework/libs/gui/gesture" revision="7ad5e4197d8a15474d7e435bce9f92c51b22e71c" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/libs/gui/surface" path="framework/libs/gui/surface" revision="00b7243cff7ad4cda37b378e6c5747fd76a82ee8" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/gui/wayland" path="framework/libs/gui/wayland" revision="51e4c783ba44171af6bb7ad9f80607f15c6a4a27" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/libs/gui/window" path="framework/libs/gui/window" revision="fd0c1640c922918775c9b7cd252676ca1ac860aa" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/libs/gui/window" path="framework/libs/gui/window" revision="f48fc1d4fff13826af5aaac9f4588cd58ec08625" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/gui/wpc" path="framework/libs/gui/wpc" revision="41386070fec12861c1438df0683b8c6834b87d4f" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/libs/network" path="framework/libs/network" revision="b161530137500c5b16cafb6390fc09369c61420b" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/libs/network" path="framework/libs/network" revision="aa3bf3c7d82dbfaa1a1c2747ec0cf37547c7bde9" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/page" path="framework/libs/page" revision="3ef3bfe4c4e77a994f5e08d0103acfc111207666" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/properties" path="framework/libs/properties" revision="bd6724383ee874256eaa8a9d5af1692dba6c75cd" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/settings" path="framework/libs/settings" revision="877146c52c9b4bce89dd0d11ecae417ebf6034f7" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/statusbar" path="framework/libs/statusbar" revision="3c8d3fd335ffd025324165707d51c3d6a7d608e1" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/telephony" path="framework/libs/telephony" revision="5d84d0305fd95e95adf99bd7a17f97b3fd38e5c9" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/libs/user" path="framework/libs/user" revision="3ab77aa0923658d32545c1254a79fdd216f7145e" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/libs/webengine/chromium" path="framework/libs/webengine/chromium" revision="8fb094f7d586fbfe8be5a6969bd0829bf30518b3" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/libs/webengine/domono" path="framework/libs/webengine/domono" revision="803f1775e0e96ad453d507a38fddab3cd2947c4e" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/nativeservice/loggerd" path="framework/nativeservice/loggerd" revision="c49c93c01c03aa3c613eed71b81eaab29070658d" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/libs/webengine/chromium" path="framework/libs/webengine/chromium" revision="94e62701cf2a19c58da0e8662869d9ab52ef4115" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/libs/webengine/domono" path="framework/libs/webengine/domono" revision="1431a37050cdb9704142e0cde4c86f40e9f9cf0f" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/nativeservice/loggerd" path="framework/nativeservice/loggerd" revision="cc41344141bfa1f14caa540304d59cdf8dce4085" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/audio" path="framework/npm/audio" revision="9c35a85398f2950b2d4570bba5774f5cb479b545" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/battery" path="framework/npm/battery" revision="88d3cf1eb479ce7f30f9ea5547798e57d8f0c9b2" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/bluetooth" path="framework/npm/bluetooth" revision="983a9bf68a8161d029d84b91f606daed956225c3" upstream="dev_host_x86"/>
@@ -758,9 +761,9 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/framework/npm/filesystem" path="framework/npm/filesystem" revision="d601130180345c56641303a9da2c53776b457c80" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/handwriting" path="framework/npm/handwriting" revision="362ba01837c500a494b2e19b6752f7cb2a0ad635" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/localization" path="framework/npm/localization" revision="d8a4a20c61d83258b5ea0e45c9b2ae75225ac0f1" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/npm/multimedia" path="framework/npm/multimedia" revision="b28645a0dbaa719f95efb48657e11eaa336f390e" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/npm/multimedia" path="framework/npm/multimedia" revision="c21370b7d89cd663821314e72fac8f33dbdea514" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/net_monitor" path="framework/npm/netmonitor" revision="6b6b2b35c842445bdcb69f47a4f0d88ebad7961d" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/npm/pageapi" path="framework/npm/pageapi" revision="a218be22e0909eecdbe1a014dfd5603f27e21703" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/npm/pageapi" path="framework/npm/pageapi" revision="d2e2c8c12cded7eef07542d4eb0ec3ca4b442599" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/permission" path="framework/npm/permission" revision="e0d55ebefe34fdac805116c0aef2c0fa58255792" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/power" path="framework/npm/power" revision="35eee51ee4f46e01285872af33d89d3becb73833" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/provider" path="framework/npm/provider" revision="a0d09b9b33551ea9e1dc38596efd7500d822dffc" upstream="dev_host_x86"/>
@@ -778,31 +781,31 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/framework/npm/webapi" path="framework/npm/webapi" revision="0ee5b0b58557ff1fdf2c5174e0db133000f9e1ef" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/wifimgr" path="framework/npm/wifimgr" revision="aa1c767e8668fa6c2451171706d7dfe15fade371" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/npm/workerex" path="framework/npm/workerex" revision="1b0b2ebbae75883bee67d65b691e0f0c8782e147" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/pageservice/settingssrv" path="framework/pageservice/settingssrv" revision="15077762c43797a0c0dd4a50d03e0470f10ccbe4" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/adbd" path="framework/nativeservice/adbd" revision="c0e79bf95ec4572fccbdc78ddc15cb96390c8f74" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/pageservice/settingssrv" path="framework/pageservice/settingssrv" revision="91fb4cbe618bc56969b544d255d8c3cc97b2127a" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/adbd" path="framework/nativeservice/adbd" revision="68a5690c51b88f4548abea809063b29a62feed62" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/alarm" path="framework/nativeservice/alarmd" revision="2444533921e8ae0553e5c068ba8da051d9a9e6d7" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/alixiaoyun" path="framework/nativeservice/alixiaoyund" revision="84f0aaa518b927ff5d538f9f243dbe688b4b54dd" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/alixiaoyun" path="framework/nativeservice/alixiaoyund" revision="39a7ba89ad8d30e6adb750280e67d0d7502c1da2" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/asr" path="framework/nativeservice/asrd" revision="fedd7307ad35be5925a8603f5acb559b3764c2d0" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/batterymanagerd" path="framework/nativeservice/batterymgrd" revision="e0d1328400e8fc42aa937c5811f7b005cb06253e" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/bluetooth" path="framework/nativeservice/bluetoothd" revision="627007c5da723e12723217e765956479648057b4" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/camera" path="framework/nativeservice/camerasrvd" revision="8e5c085970024c8169d6baa187be5f022c656353" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/camera" path="framework/nativeservice/camerasrvd" revision="18ca6247ce7abd30ebd6d77a4d03f15cdda881db" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/clipboard" path="framework/nativeservice/clipboardd" revision="e954ae1d99475deed22108aa98623c14b469ed24" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/connectivityserviced" path="framework/nativeservice/connectd" revision="9710acd5fb32325f636b22bc5939aefad5c4ed98" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/datamanager" path="framework/nativeservice/datamgrd" revision="21fcbea8feeb675a0619e5ec28716c392835f444" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/connectivityserviced" path="framework/nativeservice/connectd" revision="fa32bc4e4b49dea294df6cf13fecbfe78ce2c69f" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/datamanager" path="framework/nativeservice/datamgrd" revision="be32cebb8b0d837f7da197125a2ba09b93a72b2f" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/fingerprintd" path="framework/nativeservice/fingerprintd" revision="f6e379d1cfd6f94ea99e5b0b60d9ddd943b6e141" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/inputmethod" path="framework/nativeservice/imed" revision="ad3a520bfb1ef0fd01332bd27cd0ef9e848bee13" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/inputmethod" path="framework/nativeservice/imed" revision="9f5c7a0019d0c516366f7f843f39a046626471a8" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/location/gps-manager" path="framework/libs/location/gps-provider" revision="51c9344d19f7728b244325a85643623e736fc4d9" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/multimedia" path="framework/nativeservice/multimediad" revision="6cf71101f45c987934b3075835cbb903eb9a09fe" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/pagemanagerd" path="framework/nativeservice/pagemgrd" revision="86cd0a72364715ced5b204b6e0acca9c75722cd9" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/powermanagerd" path="framework/nativeservice/powermgrd" revision="ea5237e4c70b84895878fcfe767fac04a0060748" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/multimedia" path="framework/nativeservice/multimediad" revision="4d5f5d7783e97d106a5ad427a0ff8b47728dedfb" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/pagemanagerd" path="framework/nativeservice/pagemgrd" revision="e024ec2e6ba891cfc9cb3931e7c981c8443fd241" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/powermanagerd" path="framework/nativeservice/powermgrd" revision="d22b62e21813d3edaf5c2af6ac2ace18d4cddef0" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/providermanagerservice" path="framework/nativeservice/providermgrd" revision="630af28065954abd1a0dab8206eb736be33c0d94" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/seed" path="framework/nativeservice/seed" revision="30138ab6f8c83ad9f0b7fd762e3a58369b4cbc8c" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/storagemanagerd" path="framework/nativeservice/storagemgrd" revision="9c6bf9d8c1c58edccd0ec217c5d08228dd4afc80" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/systemservice" path="framework/pageservice/systemsrv" revision="24caae4fc541feaf7510655a85988be26000a9d1" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/storagemanagerd" path="framework/nativeservice/storagemgrd" revision="4dfc79f8e588fff1e2611323dabd1b0e24ad8e30" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/systemservice" path="framework/pageservice/systemsrv" revision="1696f6058bcca716f5baaee1c9d2629793876e70" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/timeservice" path="framework/nativeservice/timed" revision="bfd87905e2c8b44521187abb7bf3fbf1e262b888" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/tts" path="framework/nativeservice/ttsd" revision="64c33236f3f32de80dbe2fbadd7a1b73755e30e9" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/vibratord" path="framework/nativeservice/vibratord" revision="b8147c7e8feeaf91f0c2ac8872070b1bb0f0681b" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/framework/services/weston" path="framework/nativeservice/utopiad" revision="051e5ad263adcf18ef4cae9bcc6ef7951755b229" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/framework/services/weston" path="framework/nativeservice/utopiad" revision="c5f5f7797ad5037cbe067e801b5a6dd3a21dc570" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/services/yril" path="framework/nativeservice/yril" revision="0d1d226627abddb6e09203064aa6d8fc54e85552" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/tools/procmem" path="sdk/tools/procmem" revision="90bb1f715da8f316cf660c518940a94788322f6b" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/framework/tools/procrank" path="sdk/tools/procrank" revision="3e388ebcaa646a941ef31a4f9e70bfb9fd039af3" upstream="dev_host_x86"/>
@@ -822,61 +825,62 @@ index effdbb4..63d1620 100644
 +  <remote name="second" fetch="ssh://infrashdev003.sh.intel.com:29418/" review="infrashdev003.sh.intel.com:8080"/>
 +  <remote fetch="ssh://android.intel.com:29418/" name="origin" review="android.intel.com:8080"/>
 +  <default remote="origin" revision="y_os_a/dev_host_x86" sync-c="true" sync-j="4"/>
-+  <project name="a/y_os_a/device/generic/goldfish" path="container/vhal" revision="982bcf3aff9eee453aa18a0c77db5aafe24ddf7d" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/os/apps/ucbrowser" path="apps/ucbrowser" revision="4e59219348483eeb5b5c5c14222d3c61a5b9b802" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/platform/external/qemu" path="container/containerd" revision="c2fb36e93b15c9f35a2f10a99c1fb3b1bae3c675" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/device/generic/goldfish" path="container/vhal" revision="6f623de9ec59bc6c958864aa301819ea90caa0bf" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/os/apps/ucbrowser" path="apps/ucbrowser" revision="c46879c038eec1dcd7dd009e3902085eb4e83adb" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/platform/external/qemu" path="container/containerd" revision="14e50b1fe4224f6dc3a084a2c676f2c6d49f678a" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/platform/hardware/libhardware" path="hal/libhardware" revision="6ff58f1c76ea6c7e0810b4234dd8328453e7b08e" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/platform/hardware/libhardware_legacy" path="hal/libhardware_legacy" revision="bc341660071210855f7e796398fce32fb22911fe" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/platform/linux/modules" path="vendor/intel/linux/modules" revision="e7e8ab3444c62b4daf277bbeda26cfda522e8298" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/platform/linux/modules" path="vendor/intel/linux/modules" revision="d7cd693ad0c3d2ce74970a0624e3e22477fa69f2" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/platform/vendor/intel/tool" path="vendor/intel/tool" revision="67ec0f750c92017c554432c7dea8ae723b72f570" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/external/chromium/third_party/adhd" path="framework/nativeservice/audiosrvd" revision="7994e0585b00200f46b3ea3100f26dbab01b3a42" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/external/chromium/third_party/adhd" path="framework/nativeservice/audiosrvd" revision="94168e57460d11e13398b4fdd5362d27c4231129" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/METAINFO" path="METAINFO" revision="f71c449dc57cc640b3c4093fc6a16ca0a93c61e1" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/bootanimation" path="apps/bootanimation" revision="3dac837e1cd4c266c5ae1576f07c6662d6746145" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/browser" path="apps/browser" revision="8ae302a573d9cddb43cb587a77d01368e1203b86" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/apps/camera" path="apps/camera" revision="39bba45c03da92710aeec118c4c42d9d4c92f9ed" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/apps/camera" path="apps/camera" revision="4fa86bb3dbdd8909cb71122f1a8afeafe8bb50af" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/cardshell" path="apps/cardshell" revision="248670782023c4df9096c1d4408cc9dfa2084c2b" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/apps/clock" path="apps/clock" revision="d8d0c39479e610aec418c327f4ac54bc5da2260b" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/apps/clock" path="apps/clock" revision="76e6b6c638a07e7a7bf0f09ff7884cd401ca4d62" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/dials" path="apps/dials" revision="2c49cc144e4a35c7d72ee249daed50888f5757c0" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/download" path="apps/download" revision="07caf0d90335d5073e7069e616303dc1fabd6386" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/apps/eyesprotection" path="apps/tablet/eyesprotection" revision="12044fe31ea870de11caa61e1fb6fb7a8a760967" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/homeshell" path="apps/homeshell" revision="751162bf90150571644f0f5bdebaf1cae66353ca" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/ime" path="apps/ime" revision="c64447c95ab64a999a3acd8631a7ade12d272230" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/interconnection" path="apps/interconnection" revision="7d21aa40d83d37bc15e200612ddbd9d060ad410a" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/mms" path="apps/mms" revision="ac35a56cfa9fc738d63b2695876bf991c31b6437" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/notification" path="apps/notification" revision="b1db137cc6ae3fede8fb59ed1536388bc2c3091d" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/syncapp" path="apps/syncapp" revision="1c29e689ff8667c548382dff54d549da12238eb6" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/apps/systemui" path="apps/systemui" revision="6d76de68e05214c8dcf83ea3bfa5e088378516b1" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/apps/systemui" path="apps/systemui" revision="c42b5ba0a406126d9cd823c661fa44ccfdedd584" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/tablet/bootwizard" path="apps/tablet/bootwizard" revision="621314849d3f4c4a392dd62f32769bc016cf80e5" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/apps/tablet/cardshell" path="apps/tablet/cardshell" revision="abc877a5680dffb443100901229471e58c7f6cfe" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/apps/tablet/ime" path="apps/tablet/ime" revision="f797de47bc987428200eb9aa03d90c12978119c7" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/apps/tablet/setting" path="apps/tablet/setting" revision="59196152305030d11996869112c9e14151972dc3" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/apps/tablet/cardshell" path="apps/tablet/cardshell" revision="4316976723af96e8b464da0157c0e9bf149a46d5" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/apps/tablet/ime" path="apps/tablet/ime" revision="0f1173e0f054aa10a335f7478d1574bad0a9ad4f" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/apps/tablet/setting" path="apps/tablet/setting" revision="e8ad32b9102f4b6c3138348b8789c588d28c2527" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/tablet/webrtc" path="apps/tablet/webrtc" revision="ede93853c57ae7291ea970b9a875d8643170f5a6" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/taskmanagement" path="apps/taskmanagement" revision="d347f78a1d6ee1f7067eb822554a08bb9b129564" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/apps/weblauncher" path="apps/weblauncher" revision="32d2a8d57ca7b0267a400ed030585f777231177c" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/container/android-core" path="container/android-core" revision="10a272f00e88a1e5e9ef933367ac3e68ea37a6ff" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/container/android-core" path="container/android-core" revision="70bb0b616fa24819e266a2157b98d1b5665beeed" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/core/foundation" path="third_party/corefoundation" revision="c12ce6afb20d9713f6213c5a3fb40e74954bfd19" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/device/hp/peacock/firmware" path="device/hp/peacock/firmware" revision="84f5bea51ce795ab2fc9bae519e2e0bf343299b9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/device/hp/peacock/led" path="device/hp/peacock/led" revision="bfb24761eff51c00d6d945bb729fcff3160d6ec6" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/base" path="framework/libs/base" revision="d6ce6e6f0f3e662160721291ec9fd72dae3d4a57" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/battery" path="framework/libs/battery" revision="85e8921db9764420bddcd0d43d98b7de87d2b0eb" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/cloudcode" path="framework/libs/cloudcode" revision="61826ca3508a898902514fe48bba6ffd30d56043" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/data" path="framework/libs/data" revision="6138cdcbdfc0b03d63b423533661dae9f95a6a60" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/data" path="framework/libs/data" revision="a999ba62d6f1e8ea1851263fac09c427c32b9992" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/gcontext" path="framework/libs/gcontext" revision="eec1d58a32399b55ef950afe7968326d59b405c0" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/graphics" path="framework/libs/graphics" revision="a51277cc17a2fa1262a2ea26fad28508bff464be" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/gui/gesture" path="framework/libs/gui/gesture" revision="6c8a20436a40b3df3f05f7d530be153259ac70bb" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/gui/surface" path="framework/libs/gui/surface" revision="4e8dc431873c6e6ac507101f70860a1529b8011b" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/graphics" path="framework/libs/graphics" revision="d06bbf24eb9e988b065b28f940748bcfd4cb410f" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/gui/gesture" path="framework/libs/gui/gesture" revision="7ad5e4197d8a15474d7e435bce9f92c51b22e71c" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/gui/surface" path="framework/libs/gui/surface" revision="00b7243cff7ad4cda37b378e6c5747fd76a82ee8" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/gui/wayland" path="framework/libs/gui/wayland" revision="51e4c783ba44171af6bb7ad9f80607f15c6a4a27" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/gui/window" path="framework/libs/gui/window" revision="fd0c1640c922918775c9b7cd252676ca1ac860aa" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/gui/window" path="framework/libs/gui/window" revision="f48fc1d4fff13826af5aaac9f4588cd58ec08625" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/gui/wpc" path="framework/libs/gui/wpc" revision="41386070fec12861c1438df0683b8c6834b87d4f" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/network" path="framework/libs/network" revision="b161530137500c5b16cafb6390fc09369c61420b" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/network" path="framework/libs/network" revision="aa3bf3c7d82dbfaa1a1c2747ec0cf37547c7bde9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/page" path="framework/libs/page" revision="3ef3bfe4c4e77a994f5e08d0103acfc111207666" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/properties" path="framework/libs/properties" revision="bd6724383ee874256eaa8a9d5af1692dba6c75cd" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/settings" path="framework/libs/settings" revision="877146c52c9b4bce89dd0d11ecae417ebf6034f7" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/statusbar" path="framework/libs/statusbar" revision="3c8d3fd335ffd025324165707d51c3d6a7d608e1" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/telephony" path="framework/libs/telephony" revision="5d84d0305fd95e95adf99bd7a17f97b3fd38e5c9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/libs/user" path="framework/libs/user" revision="3ab77aa0923658d32545c1254a79fdd216f7145e" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/webengine/chromium" path="framework/libs/webengine/chromium" revision="8fb094f7d586fbfe8be5a6969bd0829bf30518b3" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/libs/webengine/domono" path="framework/libs/webengine/domono" revision="803f1775e0e96ad453d507a38fddab3cd2947c4e" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/nativeservice/loggerd" path="framework/nativeservice/loggerd" revision="c49c93c01c03aa3c613eed71b81eaab29070658d" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/webengine/chromium" path="framework/libs/webengine/chromium" revision="94e62701cf2a19c58da0e8662869d9ab52ef4115" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/libs/webengine/domono" path="framework/libs/webengine/domono" revision="1431a37050cdb9704142e0cde4c86f40e9f9cf0f" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/nativeservice/loggerd" path="framework/nativeservice/loggerd" revision="cc41344141bfa1f14caa540304d59cdf8dce4085" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/audio" path="framework/npm/audio" revision="9c35a85398f2950b2d4570bba5774f5cb479b545" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/battery" path="framework/npm/battery" revision="88d3cf1eb479ce7f30f9ea5547798e57d8f0c9b2" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/bluetooth" path="framework/npm/bluetooth" revision="983a9bf68a8161d029d84b91f606daed956225c3" upstream="y_os_a/dev_host_x86"/>
@@ -897,9 +901,9 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/framework/npm/filesystem" path="framework/npm/filesystem" revision="d601130180345c56641303a9da2c53776b457c80" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/handwriting" path="framework/npm/handwriting" revision="362ba01837c500a494b2e19b6752f7cb2a0ad635" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/localization" path="framework/npm/localization" revision="d8a4a20c61d83258b5ea0e45c9b2ae75225ac0f1" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/npm/multimedia" path="framework/npm/multimedia" revision="b28645a0dbaa719f95efb48657e11eaa336f390e" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/npm/multimedia" path="framework/npm/multimedia" revision="c21370b7d89cd663821314e72fac8f33dbdea514" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/net_monitor" path="framework/npm/netmonitor" revision="6b6b2b35c842445bdcb69f47a4f0d88ebad7961d" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/npm/pageapi" path="framework/npm/pageapi" revision="a218be22e0909eecdbe1a014dfd5603f27e21703" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/npm/pageapi" path="framework/npm/pageapi" revision="d2e2c8c12cded7eef07542d4eb0ec3ca4b442599" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/permission" path="framework/npm/permission" revision="e0d55ebefe34fdac805116c0aef2c0fa58255792" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/power" path="framework/npm/power" revision="35eee51ee4f46e01285872af33d89d3becb73833" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/provider" path="framework/npm/provider" revision="a0d09b9b33551ea9e1dc38596efd7500d822dffc" upstream="y_os_a/dev_host_x86"/>
@@ -917,31 +921,31 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/framework/npm/webapi" path="framework/npm/webapi" revision="0ee5b0b58557ff1fdf2c5174e0db133000f9e1ef" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/wifimgr" path="framework/npm/wifimgr" revision="aa1c767e8668fa6c2451171706d7dfe15fade371" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/npm/workerex" path="framework/npm/workerex" revision="1b0b2ebbae75883bee67d65b691e0f0c8782e147" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/pageservice/settingssrv" path="framework/pageservice/settingssrv" revision="15077762c43797a0c0dd4a50d03e0470f10ccbe4" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/adbd" path="framework/nativeservice/adbd" revision="c0e79bf95ec4572fccbdc78ddc15cb96390c8f74" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/pageservice/settingssrv" path="framework/pageservice/settingssrv" revision="91fb4cbe618bc56969b544d255d8c3cc97b2127a" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/adbd" path="framework/nativeservice/adbd" revision="68a5690c51b88f4548abea809063b29a62feed62" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/alarm" path="framework/nativeservice/alarmd" revision="2444533921e8ae0553e5c068ba8da051d9a9e6d7" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/alixiaoyun" path="framework/nativeservice/alixiaoyund" revision="84f0aaa518b927ff5d538f9f243dbe688b4b54dd" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/alixiaoyun" path="framework/nativeservice/alixiaoyund" revision="39a7ba89ad8d30e6adb750280e67d0d7502c1da2" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/asr" path="framework/nativeservice/asrd" revision="fedd7307ad35be5925a8603f5acb559b3764c2d0" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/batterymanagerd" path="framework/nativeservice/batterymgrd" revision="e0d1328400e8fc42aa937c5811f7b005cb06253e" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/bluetooth" path="framework/nativeservice/bluetoothd" revision="627007c5da723e12723217e765956479648057b4" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/camera" path="framework/nativeservice/camerasrvd" revision="8e5c085970024c8169d6baa187be5f022c656353" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/camera" path="framework/nativeservice/camerasrvd" revision="18ca6247ce7abd30ebd6d77a4d03f15cdda881db" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/clipboard" path="framework/nativeservice/clipboardd" revision="e954ae1d99475deed22108aa98623c14b469ed24" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/connectivityserviced" path="framework/nativeservice/connectd" revision="9710acd5fb32325f636b22bc5939aefad5c4ed98" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/datamanager" path="framework/nativeservice/datamgrd" revision="21fcbea8feeb675a0619e5ec28716c392835f444" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/connectivityserviced" path="framework/nativeservice/connectd" revision="fa32bc4e4b49dea294df6cf13fecbfe78ce2c69f" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/datamanager" path="framework/nativeservice/datamgrd" revision="be32cebb8b0d837f7da197125a2ba09b93a72b2f" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/fingerprintd" path="framework/nativeservice/fingerprintd" revision="f6e379d1cfd6f94ea99e5b0b60d9ddd943b6e141" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/inputmethod" path="framework/nativeservice/imed" revision="ad3a520bfb1ef0fd01332bd27cd0ef9e848bee13" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/inputmethod" path="framework/nativeservice/imed" revision="9f5c7a0019d0c516366f7f843f39a046626471a8" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/location/gps-manager" path="framework/libs/location/gps-provider" revision="51c9344d19f7728b244325a85643623e736fc4d9" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/multimedia" path="framework/nativeservice/multimediad" revision="6cf71101f45c987934b3075835cbb903eb9a09fe" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/pagemanagerd" path="framework/nativeservice/pagemgrd" revision="86cd0a72364715ced5b204b6e0acca9c75722cd9" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/powermanagerd" path="framework/nativeservice/powermgrd" revision="ea5237e4c70b84895878fcfe767fac04a0060748" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/multimedia" path="framework/nativeservice/multimediad" revision="4d5f5d7783e97d106a5ad427a0ff8b47728dedfb" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/pagemanagerd" path="framework/nativeservice/pagemgrd" revision="e024ec2e6ba891cfc9cb3931e7c981c8443fd241" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/powermanagerd" path="framework/nativeservice/powermgrd" revision="d22b62e21813d3edaf5c2af6ac2ace18d4cddef0" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/providermanagerservice" path="framework/nativeservice/providermgrd" revision="630af28065954abd1a0dab8206eb736be33c0d94" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/seed" path="framework/nativeservice/seed" revision="30138ab6f8c83ad9f0b7fd762e3a58369b4cbc8c" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/storagemanagerd" path="framework/nativeservice/storagemgrd" revision="9c6bf9d8c1c58edccd0ec217c5d08228dd4afc80" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/systemservice" path="framework/pageservice/systemsrv" revision="24caae4fc541feaf7510655a85988be26000a9d1" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/storagemanagerd" path="framework/nativeservice/storagemgrd" revision="4dfc79f8e588fff1e2611323dabd1b0e24ad8e30" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/systemservice" path="framework/pageservice/systemsrv" revision="1696f6058bcca716f5baaee1c9d2629793876e70" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/timeservice" path="framework/nativeservice/timed" revision="bfd87905e2c8b44521187abb7bf3fbf1e262b888" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/tts" path="framework/nativeservice/ttsd" revision="64c33236f3f32de80dbe2fbadd7a1b73755e30e9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/vibratord" path="framework/nativeservice/vibratord" revision="b8147c7e8feeaf91f0c2ac8872070b1bb0f0681b" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/framework/services/weston" path="framework/nativeservice/utopiad" revision="051e5ad263adcf18ef4cae9bcc6ef7951755b229" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/framework/services/weston" path="framework/nativeservice/utopiad" revision="c5f5f7797ad5037cbe067e801b5a6dd3a21dc570" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/services/yril" path="framework/nativeservice/yril" revision="0d1d226627abddb6e09203064aa6d8fc54e85552" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/tools/procmem" path="sdk/tools/procmem" revision="90bb1f715da8f316cf660c518940a94788322f6b" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/framework/tools/procrank" path="sdk/tools/procrank" revision="3e388ebcaa646a941ef31a4f9e70bfb9fd039af3" upstream="y_os_a/dev_host_x86"/>
@@ -966,20 +970,20 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/prebuilts/tools/intel" path="prebuilts/tools/intel" revision="9048c550307b5e222bd75f94eb363e863a49c8ab" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/prebuilts/yunos3.0" path="prebuilts/yunos3.0" revision="65df5fb6dca316608443b709a6e3fd30c620db4a" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/prebuilts/yunospick_binary_debug" path="prebuilts/yunospick_binary_debug" revision="f013cea932ba4acf1f1d23c3f9935452f74f6a34" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/prebuilts/yunospick_binary_eng" path="prebuilts/yunospick_binary_eng" revision="979a9d7683c74403687fcbb2473c2b18a312db96" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/prebuilts/yunospick_binary_eng" path="prebuilts/yunospick_binary_eng" revision="da0f837af9885528e285c3dcd9fe89c1b5286788" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/prebuilts/yunospick_binary_user" path="prebuilts/yunospick_binary_user" revision="89414496d9a7a33f32170c19adb9413eb5f61786" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec" revision="bba35307eebef6b7e0d28c01eb2e122533fe1779" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool" revision="8792a079eda840e3f79152fa282fba579bc50b99" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec" revision="8dd2c4098fef4483d930a7098fab542aca5c8409" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool" revision="d445eab766d10d8d774baa326cf3fc59fb403ce5" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/providers/mediaprovider" path="framework/pageservice/mediaprvsrv" revision="9f421ff289ae6a32c92080fe515e3f714546870e" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/recovery" path="recovery" revision="10fbf901fc5cc938c2c64c8dde61a91624f7d30c" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/recovery" path="recovery" revision="b7077dde21bdbafc9ff0928bf3bfa83a79cfdec3" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/guide" path="sdk/guide" revision="292fcac7c9a2e035a4bc717c093a642610b6e2ba" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/jsni" path="sdk/jsni" revision="732586443558cf58f3299c03b8bf43c8f9a43c20" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/samples" path="sdk/samples" revision="c6417ee370faf0e8264133301b4edfbe3f8a9323" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/tools/UBusSend" path="sdk/tools/UBusSend" revision="41c65c968b958c505a10a361f1bed5cb3c22e522" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/sdk/tools/amt" path="sdk/tools/amt" revision="172a302d6ebe9382fabfba48ef181cc62467ccd4" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/sdk/tools/amt" path="sdk/tools/amt" revision="81cf2ffcacbd65dacd8bd3b3f67a6a9cd744218f" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/tools/appsigner" path="sdk/tools/appsigner" revision="54c42ed97bf4c8a4580571fa91c176cc5750ab5c" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/tools/apr" path="sdk/tools/apr" revision="4bf5933be942695282fc878628fbb7dc43c459c3" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/sdk/tools/crashdump" path="sdk/tools/crashdump" revision="bb8ec14fb455dd5fbd1547407e001b9580004732" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/sdk/tools/crashdump" path="sdk/tools/crashdump" revision="fb3eec61d12d5969ccde9dc2010de39f9febbb62" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/tools/fat" path="sdk/tools/fat" revision="3b9632269c8b095c95e1e1500bf0f3bab040f8a4" upstream="dev_host_x86"/>
 -  <project groups="build" name="git/yunos/tianmu/sdk/tools/gperftools" path="sdk/tools/gperftools" revision="05afc70d5d10dd52aaa12810d6523edeac138538" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/tools/librank" path="sdk/tools/librank" revision="0be7d079c0ce0fe0d3ed9241ba760d243863c609" upstream="dev_host_x86"/>
@@ -989,7 +993,7 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/sdk/tools/sendlink" path="sdk/tools/sendlink" revision="bc167b010a143ffdbe1e11cc95eeed8f381b7c06" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/tools/uiautomator" path="sdk/tools/uiautomator" revision="3101105be78aeb58ab16950981dfd6369078f94d" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/sdk/tools/ydb" path="sdk/tools/ydb" revision="9bbfa694f4d9808ba2fb6a33131ea1d5db929f8c" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/security/extern" path="security/extern" revision="5edb2e47807487874a5588d33e830294f6f76654" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/security/extern" path="security/extern" revision="f12ad07fa7ed175b923509e802c79959770ca4a7" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/alsa-lib" path="third_party/alsa-lib" revision="a6c6232c8af616806f1b39e3cfd1e5d2ca7bd237" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/atrace" path="third_party/atrace" revision="897f4dfaf57cf3a357d9de757b6306b449c75823" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/attr" path="third_party/attr" revision="432e473005a0886f875ca98a3faad5de92528417" upstream="dev_host_x86"/>
@@ -998,8 +1002,8 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/third_party/busybox" path="third_party/busybox" revision="0a0a35dc220136bbee59264f5a11110b0396c1e2" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/bzip2" path="third_party/bzip2" revision="046df26d172255dd3e0e470673229cc674a30458" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/cairo" path="third_party/cairo" revision="1e9ca521e419fa89028ce7b7db960b99999625d3" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/third_party/chromium_org" path="third_party/chromium_org" revision="b7f59f2727ffde87f25c8191555d21efeb93f275" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/third_party/connman" path="third_party/connman" revision="66eb258f2c41e96f46a4d286e835f1f6a86a0c61" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/third_party/chromium_org" path="third_party/chromium_org" revision="a3fe7cddab2747eeaa3c6c296ef35af2e526a5a7" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/third_party/connman" path="third_party/connman" revision="e1adc82fc972ea3dfb997f59982247880cdbb9ec" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/crossplay" path="third_party/crossplay" revision="f3c1f524c3d70a56891c13cfb35ec1c37754f4ca" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/csp" path="third_party/csp" revision="297bc4d665e8f8706d75ba07a07e230ca72611d2" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/db4" path="third_party/db4" revision="a9c449b776662e5b683c754f36b0cbe5710888e5" upstream="dev_host_x86"/>
@@ -1043,9 +1047,9 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/third_party/libgcrypt" path="third_party/libgcrypt" revision="3c7f1aefe012edcb6ed3d0ffb8d003eeac363dd9" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libgpg-error" path="third_party/libgpg-error" revision="6b7c569a146d67c1ac946361fd70bd08e04957b1" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libical" path="third_party/libical" revision="98cd6400601ddc3aff1e48315c7ca74be6517fb4" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/third_party/libinput" path="third_party/libinput" revision="cbafd417a88c2be1d06e0bc4c61afdbcc4edfd0a" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/third_party/libinput" path="third_party/libinput" revision="5a387b0ddc7a750fb3c48272b882b2136cd7b6c7" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libjpeg-turbo" path="third_party/libjpeg-turbo" revision="2481e8e0b51bbe92391aab82dc648b81f8ee1409" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/third_party/libkdbus" path="third_party/libkdbus" revision="796375bd10d134bb9d177de8eaf8aba16d9c2d13" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/third_party/libkdbus" path="third_party/libkdbus" revision="9181f4dfc36b904bcf00ddc6f69eb01aaaa78d40" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libmtp" path="third_party/libmtp" revision="7aa254f67ff2bae9341d9ae3bec1a9cef480d7df" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libnl1" path="third_party/libnl1" revision="add550d79ceb9ea56fdbb709fc8c28ea820c2813" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libogg" path="third_party/libogg" revision="4fb29c45fc926f6f613ea05178900a075e4bd3d1" upstream="dev_host_x86"/>
@@ -1056,7 +1060,7 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/third_party/libsndfile" path="third_party/libsndfile" revision="f071eff1d6fc88bdb9baa004c76e86fe561f65f7" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libtasn1" path="third_party/libtasn1" revision="f74b9f23b2ecbbbfe16399cb492acf4087ccfa36" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libtool" path="third_party/libtool" revision="d109acba0eee7b7f619dc17dc01bacd7b5a1404f" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/third_party/libunwind" path="third_party/libunwind" revision="7e45651ce7d60f7440bb5668661098eff0034097" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/third_party/libunwind" path="third_party/libunwind" revision="8dd127cb82057ec5be0d78eb5ef2448e05fe1f53" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libusb" path="third_party/libusb" revision="2bbf0066301abaf17ce5910833e3104f8431810d" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libuv" path="third_party/libuv" revision="fcbbcf38e6e867ed3805989f715ba2072ce3c4be" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/libwebp" path="third_party/libwebp" revision="0ca89eca7a0907cd63757ce6ded0d71146eb82d7" upstream="dev_host_x86"/>
@@ -1066,7 +1070,7 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/third_party/llvm-build" path="third_party/llvm-build" revision="1bf304d0dbc05165059539e0a053231e5a4c5775" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/mako" path="third_party/python-mako" revision="366aed4d2bc12b2f5a02f3d69842e67307f3d634" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/mbedtls" path="third_party/mbedtls" revision="5a1e1a45985b24c78784101ce42d28204aefd6c7" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/third_party/mesa" path="third_party/mesa" revision="57cc0f402f5b2aa2b4de8bbff824e2029ff550a6" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/third_party/mesa" path="third_party/mesa" revision="de03425429cefefba50a6ecb2db55df0bd32083e" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/mtdev" path="third_party/mtdev" revision="90d3ffd2e8a359249591244cfc9f140c4bdcab3e" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/mtpd" path="third_party/mtpd" revision="46de89f38f8463f91f6f4039ef5a2162d66f2869" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/ncurses" path="third_party/ncurses" revision="9bfe76fe7c1b286193b966d981808dd7ac8cfaac" upstream="dev_host_x86"/>
@@ -1096,9 +1100,9 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/third_party/setuptools" path="third_party/python-setuptools" revision="ebf30b69931a41ab4ff709a38bd855b5777036d3" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/smack" path="third_party/smack" revision="3b703e824f65a137c3704b8658db45eef445721e" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/speex" path="third_party/speex" revision="8148ed73a54711a74a9475c58c44d9173b3a84ad" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/third_party/sqlite" path="third_party/sqlite" revision="651aecb27e7ff2419dc19f9184ae25f10ac944e9" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/third_party/sqlite" path="third_party/sqlite" revision="543ad6edb1fa41960c99838d943d8a73e577b961" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/strace" path="third_party/strace" revision="9ffcaaaac6e09d0b36fd84e8601ca9d87abb4043" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/third_party/systemd_2_19" path="third_party/systemd" revision="5694cc733a97294719e79841a4af3967aef62947" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/third_party/systemd_2_19" path="third_party/systemd" revision="b2883224e56345b1fd0cb82a67dcc4e4656bbe83" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/tzdata" path="third_party/tzdata" revision="788a384760e380ae4d2ae40e02352770f37cbca3" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/util-linux" path="third_party/util-linux" revision="cd88e0cc71aa02ca34d45a710787c397a3827856" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/valgrind" path="third_party/valgrind" revision="9d3a5e555ada0ff6efd04380bdf6d8af7cf6cebd" upstream="dev_host_x86"/>
@@ -1106,37 +1110,37 @@ index effdbb4..63d1620 100644
 -  <project name="git/yunos/tianmu/third_party/webrtc/webrtc" path="third_party/webrtc/webrtc" revision="1b7b2d616c2da62f6c57e5d2731dd644a1868aca" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/webrtc/woogeen" path="third_party/webrtc/woogeen" revision="08866599d854ff554f9be1c8abfe76ee9bd2952b" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/webrtc/ybinding" path="third_party/webrtc/ybinding" revision="28c96c01e31b3a8223bec2b31b1ad315a7f68eb8" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/third_party/wpa_supplicant" path="third_party/wpa_supplicant" revision="950c05b1b0d83c2824111b776762fc349c25cae4" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/third_party/wpa_supplicant" path="third_party/wpa_supplicant" revision="6e3c03864b68933f19d6f95b3620f13323b0f6ab" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/xmlsec1" path="third_party/xmlsec1" revision="7127ff255e2260fc7ce45a96cef6cd01e5819ed6" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/xz" path="third_party/xz" revision="fb379069cc7cea8e62357516eeeb02926dc845f9" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/yasm" path="third_party/yasm" revision="eb4f0fa5d7956ec02a5780c71d65282367b78d83" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/third_party/zlib" path="third_party/zlib" revision="f3a25f31ed60b7f31574ddf6e17c7702388caa52" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/bosch" path="vendor/bosch" revision="7f766445dce044842caa84e783f25154dd791306" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/vendor/conexant/audio" path="vendor/conexant/audio" revision="c123fbaa95225f0fd79157320d1b43ac4ab2426c" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/vendor/conexant/audio" path="vendor/conexant/audio" revision="bef6f1d8a67a076c96736694a80abe2d4b406fcf" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/beignet" path="vendor/intel/beignet" revision="c2ea2fae79c460b899237b0c647465d3e79a0f6c" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/vendor/intel/camera/cht" path="vendor/intel/camera/cht" revision="8c5efe3941cf84c6d0322250d5d15843b2f164bc" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/vendor/intel/camera/cht" path="vendor/intel/camera/cht" revision="16e9f361b33c6302db62e128f5ac88036618e5ae" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/crashlogd" path="vendor/intel/crashlogd" revision="b38eaebe573995b77b700a3a590b50e8c9cdfdeb" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/dptf" path="vendor/intel/dptf" revision="cd5731ee1e0b3edad47a59b838f89211565d28c7" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/glfw" path="vendor/intel/glfw" revision="f4a8970fee1206322dcc34e4c2532c5625328888" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/librealsense" path="vendor/intel/librealsense" revision="53623f6c147c19c47162999e2f411401c2de0634" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/librealsense_persontracking" path="vendor/intel/librealsense_persontracking" revision="30ef1f1868c68bee05b9b213255f7415b125e4d4" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/vendor/intel/libva" path="vendor/intel/libva" revision="b461c7478318d4d337df61ff720bdbd4d79b6344" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/vendor/intel/libva" path="vendor/intel/libva" revision="f6f60796258099474ab143d3bc53678f6641327b" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/libva-intel-driver" path="vendor/intel/libva-intel-driver" revision="a399e86b6456e2aaa0fb49016707fa7a33ca27d8" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/vendor/intel/libyami" path="vendor/intel/libyami" revision="fdf1c0bd7f38fcf8714ac18226eb445c5fcbaaa9" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/vendor/intel/libyami-utils" path="vendor/intel/libyami-utils" revision="b209f24f23385d64a04a208845f7d6108ac0bfeb" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/vendor/intel/libyami" path="vendor/intel/libyami" revision="46d2f5279c950f6ff76d65289396209e76b5c856" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/vendor/intel/libyami-utils" path="vendor/intel/libyami-utils" revision="a2d29b651652a4d6843f6726b48a9676d530c446" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/linux/kernel_yunbot" path="vendor/intel/linux/kernel_yunbot" revision="09801588a3667b919d6ec1878ea51218bc126a9a" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/vendor/intel/linux_yunhal" path="vendor/intel/linux/kernel_yunhal" revision="bcbcc9bb85a1215ea61b9edd4c940fd2bfe36ef2" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/vendor/intel/linux_yunhal" path="vendor/intel/linux/kernel_yunhal" revision="ce216e8e7f1a2a002fa473e8766edd7f19324bf3" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/lz4" path="vendor/intel/lz4" revision="ecae85cb3c7d0f6a07fec87e82949e47e28d57a2" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/opencv" path="vendor/intel/opencv" revision="4e55e87cf40afca77ef248e3fb43b927f6910fd6" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/realsense_samples" path="vendor/intel/realsense_samples" revision="063efae2a92b2598ad6fd1cc73da2608a018bec4" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/realsense_sdk" path="vendor/intel/realsense_sdk" revision="5381ee095a27bab917ba1b7898cfab0818567d6e" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/vendor/intel/sensor/cht/ish-sensors" path="vendor/intel/sensor/cht/ish-sensors" revision="03f28c0b4c41dbaa27c5bd49efcdfbb490998ec6" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/vendor/intel/sensor/cht/ish-sensors" path="vendor/intel/sensor/cht/ish-sensors" revision="c0613a68bf25ae60d0ec39f2b81721a17eccb04d" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vendor/intel/sensor/cht/libsensorhub" path="vendor/intel/sensor/cht/libsensorhub" revision="16e6ec4d1a68c8dfb950f3759e861b1e10e4b550" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vm/codecache" path="vm/codecache" revision="a620d343d797cebcd03aef6f9e7dfdfb59dc9046" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vm/jsnihelper" path="vm/jsnihelper" revision="9fac32e339e6185772b0bb532c2247d9cb9ace03" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vm/node" path="vm/node" revision="f6786d50f3bc56dcfd233eefd4067376f5997a60" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/vm/v8" path="vm/v8" revision="e1a7ae6b0869818dbd20a62465a69223419b0d74" upstream="dev_host_x86"/>
--  <project name="git/yunos/tianmu/xmake" path="xmake" revision="5a7c115ec941c78a517792c80c66d590dde66f9d" upstream="dev_host_x86"/>
+-  <project name="git/yunos/tianmu/xmake" path="xmake" revision="a9b52ac8cfac58900c969a521612e081e4152549" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/yunhal/devicetree" path="yunhal/devicetree" revision="3081a9ef7f3af9e42f0549201457446cf9d32d6f" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/yunhal/droid" path="yunhal/droid" revision="7f6ff38726902b625dae390e007ed3e8f47b8269" upstream="dev_host_x86"/>
 -  <project name="git/yunos/tianmu/yunhal/modules" path="yunhal/modules" revision="75527d1adb89f29a843ecc31c2f5e7762a853983" upstream="dev_host_x86"/>
@@ -1149,20 +1153,20 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/prebuilts/tools/intel" path="prebuilts/tools/intel" revision="9048c550307b5e222bd75f94eb363e863a49c8ab" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/prebuilts/yunos3.0" path="prebuilts/yunos3.0" revision="65df5fb6dca316608443b709a6e3fd30c620db4a" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/prebuilts/yunospick_binary_debug" path="prebuilts/yunospick_binary_debug" revision="f013cea932ba4acf1f1d23c3f9935452f74f6a34" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_binary_eng" path="prebuilts/yunospick_binary_eng" revision="979a9d7683c74403687fcbb2473c2b18a312db96" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/prebuilts/yunospick_binary_eng" path="prebuilts/yunospick_binary_eng" revision="da0f837af9885528e285c3dcd9fe89c1b5286788" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/prebuilts/yunospick_binary_user" path="prebuilts/yunospick_binary_user" revision="89414496d9a7a33f32170c19adb9413eb5f61786" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec" revision="bba35307eebef6b7e0d28c01eb2e122533fe1779" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool" revision="8792a079eda840e3f79152fa282fba579bc50b99" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/prebuilts/yunospick_spec" path="prebuilts/yunospick_spec" revision="8dd2c4098fef4483d930a7098fab542aca5c8409" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/prebuilts/yunospick_tool" path="prebuilts/yunospick_tool" revision="d445eab766d10d8d774baa326cf3fc59fb403ce5" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/providers/mediaprovider" path="framework/pageservice/mediaprvsrv" revision="9f421ff289ae6a32c92080fe515e3f714546870e" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/recovery" path="recovery" revision="10fbf901fc5cc938c2c64c8dde61a91624f7d30c" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/recovery" path="recovery" revision="b7077dde21bdbafc9ff0928bf3bfa83a79cfdec3" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/guide" path="sdk/guide" revision="292fcac7c9a2e035a4bc717c093a642610b6e2ba" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/jsni" path="sdk/jsni" revision="732586443558cf58f3299c03b8bf43c8f9a43c20" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/samples" path="sdk/samples" revision="c6417ee370faf0e8264133301b4edfbe3f8a9323" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/UBusSend" path="sdk/tools/UBusSend" revision="41c65c968b958c505a10a361f1bed5cb3c22e522" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/sdk/tools/amt" path="sdk/tools/amt" revision="172a302d6ebe9382fabfba48ef181cc62467ccd4" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/sdk/tools/amt" path="sdk/tools/amt" revision="81cf2ffcacbd65dacd8bd3b3f67a6a9cd744218f" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/appsigner" path="sdk/tools/appsigner" revision="54c42ed97bf4c8a4580571fa91c176cc5750ab5c" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/apr" path="sdk/tools/apr" revision="4bf5933be942695282fc878628fbb7dc43c459c3" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/sdk/tools/crashdump" path="sdk/tools/crashdump" revision="bb8ec14fb455dd5fbd1547407e001b9580004732" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/sdk/tools/crashdump" path="sdk/tools/crashdump" revision="fb3eec61d12d5969ccde9dc2010de39f9febbb62" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/fat" path="sdk/tools/fat" revision="3b9632269c8b095c95e1e1500bf0f3bab040f8a4" upstream="y_os_a/dev_host_x86"/>
 +  <project groups="build" name="a/y_os_a/sdk/tools/gperftools" path="sdk/tools/gperftools" revision="05afc70d5d10dd52aaa12810d6523edeac138538" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/librank" path="sdk/tools/librank" revision="0be7d079c0ce0fe0d3ed9241ba760d243863c609" upstream="y_os_a/dev_host_x86"/>
@@ -1172,7 +1176,7 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/sdk/tools/sendlink" path="sdk/tools/sendlink" revision="bc167b010a143ffdbe1e11cc95eeed8f381b7c06" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/uiautomator" path="sdk/tools/uiautomator" revision="3101105be78aeb58ab16950981dfd6369078f94d" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/sdk/tools/ydb" path="sdk/tools/ydb" revision="9bbfa694f4d9808ba2fb6a33131ea1d5db929f8c" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/security/extern" path="security/extern" revision="5edb2e47807487874a5588d33e830294f6f76654" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/security/extern" path="security/extern" revision="f12ad07fa7ed175b923509e802c79959770ca4a7" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/alsa-lib" path="third_party/alsa-lib" revision="a6c6232c8af616806f1b39e3cfd1e5d2ca7bd237" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/atrace" path="third_party/atrace" revision="897f4dfaf57cf3a357d9de757b6306b449c75823" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/attr" path="third_party/attr" revision="432e473005a0886f875ca98a3faad5de92528417" upstream="y_os_a/dev_host_x86"/>
@@ -1181,8 +1185,8 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/third_party/busybox" path="third_party/busybox" revision="0a0a35dc220136bbee59264f5a11110b0396c1e2" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/bzip2" path="third_party/bzip2" revision="046df26d172255dd3e0e470673229cc674a30458" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/cairo" path="third_party/cairo" revision="1e9ca521e419fa89028ce7b7db960b99999625d3" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/chromium_org" path="third_party/chromium_org" revision="b7f59f2727ffde87f25c8191555d21efeb93f275" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/connman" path="third_party/connman" revision="66eb258f2c41e96f46a4d286e835f1f6a86a0c61" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/chromium_org" path="third_party/chromium_org" revision="a3fe7cddab2747eeaa3c6c296ef35af2e526a5a7" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/connman" path="third_party/connman" revision="e1adc82fc972ea3dfb997f59982247880cdbb9ec" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/crossplay" path="third_party/crossplay" revision="f3c1f524c3d70a56891c13cfb35ec1c37754f4ca" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/csp" path="third_party/csp" revision="297bc4d665e8f8706d75ba07a07e230ca72611d2" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/db4" path="third_party/db4" revision="a9c449b776662e5b683c754f36b0cbe5710888e5" upstream="y_os_a/dev_host_x86"/>
@@ -1226,9 +1230,9 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/third_party/libgcrypt" path="third_party/libgcrypt" revision="3c7f1aefe012edcb6ed3d0ffb8d003eeac363dd9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libgpg-error" path="third_party/libgpg-error" revision="6b7c569a146d67c1ac946361fd70bd08e04957b1" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libical" path="third_party/libical" revision="98cd6400601ddc3aff1e48315c7ca74be6517fb4" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/libinput" path="third_party/libinput" revision="cbafd417a88c2be1d06e0bc4c61afdbcc4edfd0a" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/libinput" path="third_party/libinput" revision="5a387b0ddc7a750fb3c48272b882b2136cd7b6c7" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libjpeg-turbo" path="third_party/libjpeg-turbo" revision="2481e8e0b51bbe92391aab82dc648b81f8ee1409" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/libkdbus" path="third_party/libkdbus" revision="796375bd10d134bb9d177de8eaf8aba16d9c2d13" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/libkdbus" path="third_party/libkdbus" revision="9181f4dfc36b904bcf00ddc6f69eb01aaaa78d40" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libmtp" path="third_party/libmtp" revision="7aa254f67ff2bae9341d9ae3bec1a9cef480d7df" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libnl1" path="third_party/libnl1" revision="add550d79ceb9ea56fdbb709fc8c28ea820c2813" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libogg" path="third_party/libogg" revision="4fb29c45fc926f6f613ea05178900a075e4bd3d1" upstream="y_os_a/dev_host_x86"/>
@@ -1239,7 +1243,7 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/third_party/libsndfile" path="third_party/libsndfile" revision="f071eff1d6fc88bdb9baa004c76e86fe561f65f7" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libtasn1" path="third_party/libtasn1" revision="f74b9f23b2ecbbbfe16399cb492acf4087ccfa36" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libtool" path="third_party/libtool" revision="d109acba0eee7b7f619dc17dc01bacd7b5a1404f" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/libunwind" path="third_party/libunwind" revision="7e45651ce7d60f7440bb5668661098eff0034097" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/libunwind" path="third_party/libunwind" revision="8dd127cb82057ec5be0d78eb5ef2448e05fe1f53" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libusb" path="third_party/libusb" revision="2bbf0066301abaf17ce5910833e3104f8431810d" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libuv" path="third_party/libuv" revision="fcbbcf38e6e867ed3805989f715ba2072ce3c4be" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/libwebp" path="third_party/libwebp" revision="0ca89eca7a0907cd63757ce6ded0d71146eb82d7" upstream="y_os_a/dev_host_x86"/>
@@ -1249,7 +1253,7 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/third_party/llvm-build" path="third_party/llvm-build" revision="1bf304d0dbc05165059539e0a053231e5a4c5775" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/mako" path="third_party/python-mako" revision="366aed4d2bc12b2f5a02f3d69842e67307f3d634" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/mbedtls" path="third_party/mbedtls" revision="5a1e1a45985b24c78784101ce42d28204aefd6c7" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/platform/external/chromium_org/third_party/mesa/src" path="third_party/mesa" revision="57cc0f402f5b2aa2b4de8bbff824e2029ff550a6" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/platform/external/chromium_org/third_party/mesa/src" path="third_party/mesa" revision="de03425429cefefba50a6ecb2db55df0bd32083e" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/mtdev" path="third_party/mtdev" revision="90d3ffd2e8a359249591244cfc9f140c4bdcab3e" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/mtpd" path="third_party/mtpd" revision="46de89f38f8463f91f6f4039ef5a2162d66f2869" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/ncurses" path="third_party/ncurses" revision="9bfe76fe7c1b286193b966d981808dd7ac8cfaac" upstream="y_os_a/dev_host_x86"/>
@@ -1279,9 +1283,9 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/third_party/setuptools" path="third_party/python-setuptools" revision="ebf30b69931a41ab4ff709a38bd855b5777036d3" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/smack" path="third_party/smack" revision="3b703e824f65a137c3704b8658db45eef445721e" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/speex" path="third_party/speex" revision="8148ed73a54711a74a9475c58c44d9173b3a84ad" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/sqlite" path="third_party/sqlite" revision="651aecb27e7ff2419dc19f9184ae25f10ac944e9" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/sqlite" path="third_party/sqlite" revision="543ad6edb1fa41960c99838d943d8a73e577b961" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/strace" path="third_party/strace" revision="9ffcaaaac6e09d0b36fd84e8601ca9d87abb4043" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/systemd_2_19" path="third_party/systemd" revision="5694cc733a97294719e79841a4af3967aef62947" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/systemd_2_19" path="third_party/systemd" revision="b2883224e56345b1fd0cb82a67dcc4e4656bbe83" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/tzdata" path="third_party/tzdata" revision="788a384760e380ae4d2ae40e02352770f37cbca3" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/util-linux" path="third_party/util-linux" revision="cd88e0cc71aa02ca34d45a710787c397a3827856" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/valgrind" path="third_party/valgrind" revision="9d3a5e555ada0ff6efd04380bdf6d8af7cf6cebd" upstream="y_os_a/dev_host_x86"/>
@@ -1289,37 +1293,37 @@ index effdbb4..63d1620 100644
 +  <project name="a/y_os_a/third_party/webrtc/webrtc" path="third_party/webrtc/webrtc" revision="1b7b2d616c2da62f6c57e5d2731dd644a1868aca" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/webrtc/woogeen" path="third_party/webrtc/woogeen" revision="08866599d854ff554f9be1c8abfe76ee9bd2952b" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/webrtc/ybinding" path="third_party/webrtc/ybinding" revision="28c96c01e31b3a8223bec2b31b1ad315a7f68eb8" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/third_party/wpa_supplicant" path="third_party/wpa_supplicant" revision="950c05b1b0d83c2824111b776762fc349c25cae4" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/third_party/wpa_supplicant" path="third_party/wpa_supplicant" revision="6e3c03864b68933f19d6f95b3620f13323b0f6ab" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/xmlsec1" path="third_party/xmlsec1" revision="7127ff255e2260fc7ce45a96cef6cd01e5819ed6" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/xz" path="third_party/xz" revision="fb379069cc7cea8e62357516eeeb02926dc845f9" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/platform/external/chromium_org/third_party/yasm/source/patched-yasm" path="third_party/yasm" revision="eb4f0fa5d7956ec02a5780c71d65282367b78d83" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/third_party/zlib" path="third_party/zlib" revision="f3a25f31ed60b7f31574ddf6e17c7702388caa52" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/bosch" path="vendor/bosch" revision="7f766445dce044842caa84e783f25154dd791306" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vendor/conexant/audio" path="vendor/conexant/audio" revision="c123fbaa95225f0fd79157320d1b43ac4ab2426c" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vendor/conexant/audio" path="vendor/conexant/audio" revision="bef6f1d8a67a076c96736694a80abe2d4b406fcf" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/beignet" path="vendor/intel/beignet" revision="c2ea2fae79c460b899237b0c647465d3e79a0f6c" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vendor/intel/camera/cht" path="vendor/intel/camera/cht" revision="8c5efe3941cf84c6d0322250d5d15843b2f164bc" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vendor/intel/camera/cht" path="vendor/intel/camera/cht" revision="16e9f361b33c6302db62e128f5ac88036618e5ae" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/crashlogd" path="vendor/intel/crashlogd" revision="b38eaebe573995b77b700a3a590b50e8c9cdfdeb" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/dptf" path="vendor/intel/dptf" revision="cd5731ee1e0b3edad47a59b838f89211565d28c7" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/glfw" path="vendor/intel/glfw" revision="f4a8970fee1206322dcc34e4c2532c5625328888" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/librealsense" path="vendor/intel/librealsense" revision="53623f6c147c19c47162999e2f411401c2de0634" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/librealsense_persontracking" path="vendor/intel/librealsense_persontracking" revision="30ef1f1868c68bee05b9b213255f7415b125e4d4" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vendor/intel/libva" path="vendor/intel/libva" revision="b461c7478318d4d337df61ff720bdbd4d79b6344" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vendor/intel/libva" path="vendor/intel/libva" revision="f6f60796258099474ab143d3bc53678f6641327b" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/libva-intel-driver" path="vendor/intel/libva-intel-driver" revision="a399e86b6456e2aaa0fb49016707fa7a33ca27d8" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vendor/intel/libyami" path="vendor/intel/libyami" revision="fdf1c0bd7f38fcf8714ac18226eb445c5fcbaaa9" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vendor/intel/libyami-utils" path="vendor/intel/libyami-utils" revision="b209f24f23385d64a04a208845f7d6108ac0bfeb" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vendor/intel/libyami" path="vendor/intel/libyami" revision="46d2f5279c950f6ff76d65289396209e76b5c856" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vendor/intel/libyami-utils" path="vendor/intel/libyami-utils" revision="a2d29b651652a4d6843f6726b48a9676d530c446" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/linux/kernel_yunbot" path="vendor/intel/linux/kernel_yunbot" revision="09801588a3667b919d6ec1878ea51218bc126a9a" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vendor/intel/linux_yunhal" path="vendor/intel/linux/kernel_yunhal" revision="bcbcc9bb85a1215ea61b9edd4c940fd2bfe36ef2" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vendor/intel/linux_yunhal" path="vendor/intel/linux/kernel_yunhal" revision="ce216e8e7f1a2a002fa473e8766edd7f19324bf3" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/lz4" path="vendor/intel/lz4" revision="ecae85cb3c7d0f6a07fec87e82949e47e28d57a2" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/opencv" path="vendor/intel/opencv" revision="4e55e87cf40afca77ef248e3fb43b927f6910fd6" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/realsense_samples" path="vendor/intel/realsense_samples" revision="063efae2a92b2598ad6fd1cc73da2608a018bec4" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/realsense_sdk" path="vendor/intel/realsense_sdk" revision="5381ee095a27bab917ba1b7898cfab0818567d6e" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/vendor/intel/sensor/cht/ish-sensors" path="vendor/intel/sensor/cht/ish-sensors" revision="03f28c0b4c41dbaa27c5bd49efcdfbb490998ec6" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/vendor/intel/sensor/cht/ish-sensors" path="vendor/intel/sensor/cht/ish-sensors" revision="c0613a68bf25ae60d0ec39f2b81721a17eccb04d" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vendor/intel/sensor/cht/libsensorhub" path="vendor/intel/sensor/cht/libsensorhub" revision="16e6ec4d1a68c8dfb950f3759e861b1e10e4b550" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vm/codecache" path="vm/codecache" revision="a620d343d797cebcd03aef6f9e7dfdfb59dc9046" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vm/jsnihelper" path="vm/jsnihelper" revision="9fac32e339e6185772b0bb532c2247d9cb9ace03" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vm/node" path="vm/node" revision="f6786d50f3bc56dcfd233eefd4067376f5997a60" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/vm/v8" path="vm/v8" revision="e1a7ae6b0869818dbd20a62465a69223419b0d74" upstream="y_os_a/dev_host_x86"/>
-+  <project name="a/y_os_a/xmake" path="xmake" revision="5a7c115ec941c78a517792c80c66d590dde66f9d" upstream="y_os_a/dev_host_x86"/>
++  <project name="a/y_os_a/xmake" path="xmake" revision="a9b52ac8cfac58900c969a521612e081e4152549" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/yunhal/devicetree" path="yunhal/devicetree" revision="3081a9ef7f3af9e42f0549201457446cf9d32d6f" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/yunhal/droid" path="yunhal/droid" revision="7f6ff38726902b625dae390e007ed3e8f47b8269" upstream="y_os_a/dev_host_x86"/>
 +  <project name="a/y_os_a/yunhal/modules" path="yunhal/modules" revision="75527d1adb89f29a843ecc31c2f5e7762a853983" upstream="y_os_a/dev_host_x86"/>
