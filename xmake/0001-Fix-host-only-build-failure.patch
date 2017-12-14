@@ -1,15 +1,14 @@
-From 25ed7a6aebd7bd970665794472462af8141e754c Mon Sep 17 00:00:00 2001
+From 3e62b2a24828de8325a510ca4fbdc896bbc7dd8f Mon Sep 17 00:00:00 2001
 From: Zhenyu Liang <zhenyu.liang@intel.com>
-Date: Fri, 15 Dec 2017 04:13:58 +0800
+Date: Fri, 15 Dec 2017 04:17:15 +0800
 Subject: [PATCH] Fix host-only build failure
 
-Change-Id: I1c3eefe3301871af850ec043e0629b83aed2f8f7
+Change-Id: Iab322d191a5873b102d1380bd9ee42422745e1fb
 Tracked-On:
 ---
- mk_yunos.sh                                  | 5 +++++
- platform/tablet/product/yunhal/xmake.product | 8 +++++++-
- prebuilts/devtools/mk-image.sh               | 2 +-
- 3 files changed, 13 insertions(+), 2 deletions(-)
+ mk_yunos.sh                    | 5 +++++
+ prebuilts/devtools/mk-image.sh | 2 +-
+ 2 files changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/mk_yunos.sh b/mk_yunos.sh
 index ebc3305..02e9a9d 100755
@@ -27,29 +26,6 @@ index ebc3305..02e9a9d 100755
          ;;
    esac
    if [ -z "$BUILD_BOARD" ]; then # still couldn't match to the board
-diff --git a/platform/tablet/product/yunhal/xmake.product b/platform/tablet/product/yunhal/xmake.product
-index cef3736..11d3b19 100644
---- a/platform/tablet/product/yunhal/xmake.product
-+++ b/platform/tablet/product/yunhal/xmake.product
-@@ -325,7 +325,9 @@
-     wpa_supplicant \
-     libnl1 \
-     e2fsprogs \
--    ipsec-tools
-+    ipsec-tools \
-+    woogeen_bin \
-+    woogeen_jsni
- 
- # note this tool must have Microsoft authorized license
- # ntfs-3g link: http://www.tuxera.com/community/open-source-ntfs-3g/
-@@ -460,3 +462,7 @@
-     connectivitybridge
- --fi
- 
-+--if [[XMAKE_ENABLE_CLOSED_SOURCE]] == true
-+--pkgs-excluded \
-+     butler-js calculator-js calendar-js fota-js gallery-js keyguard-js notes-js recorder-js settingsprovider-js systemres-js account-js tablet-appstore-js tablet-audioplayer-js tablet-cloudsync-js tablet-edudesk-js tablet-filemanager-js tablet-omadm-js tablet-texteditor-js tablet-vepservice-js tablet-videoplayer-js libasec qt5 qt5-qtdeclarative system-fonts yunos-fonts datasensoring datasensoring-api django libkeyguardserviceproxy mobilecloudservice permission signature accountmanagerd charged cmns djangod locationservice permd propertyd searchd secd urlflt-proxy syncmanagerd tksd usertrackd uuid account-core agil-js agil-lib caf-js caf2 inputmanager node_caf_image node_caf_matrix node_cmns gateway node_omadm node-search sync
-+--fi
 diff --git a/prebuilts/devtools/mk-image.sh b/prebuilts/devtools/mk-image.sh
 index 99a3e6c..2c788fb 100755
 --- a/prebuilts/devtools/mk-image.sh
